@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>5、工具介绍-Sqlmap | 纸条</title>
+  <meta name="keywords" content>
+  <meta name="description" content="5、工具介绍-Sqlmap | 纸条">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="纸条-失败的理想主义者！">
+<meta name="keywords" content="Python,Python黑客,Python渗透工具">
+<meta property="og:type" content="website">
+<meta property="og:title" content="纸条">
+<meta property="og:url" content="http://autoing.github.io/categories/index.html">
+<meta property="og:site_name" content="纸条">
+<meta property="og:description" content="纸条-失败的理想主义者！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-22T04:15:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纸条">
+<meta name="twitter:description" content="纸条-失败的理想主义者！">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>纸条</span>
+</div>
+
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small> (206)</small></div></li>
+    
+        
+            
+            <li><div data-rel="Micro8">Micro8<small> (100)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="代码审计">代码审计<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Git">Git<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Linux">Linux<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="渗透测试">渗透测试<small> (15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="PHP编程">PHP编程<small> (9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Python">Python<small> (46)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="回收站">回收站<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="原创工具">原创工具<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Windows">Windows<small> (6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞库">漏洞库<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="https://github.com/autoing">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="206">
+<input type="hidden" id="yelog_site_word_count" value="346.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="原创工具 "
+           href="/article/tool-url-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 资产发现小脚本">Python 资产发现小脚本</span>
+            <span class="post-date" title="2019-09-24 23:24:36">2019/09/24</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/100_HTTP隧道reDuh第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="100、HTTP隧道reDuh第四季">100、HTTP隧道reDuh第四季</span>
+            <span class="post-date" title="2019-09-21 19:07:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/99_HTTP隧道Tunna第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="99、HTTP隧道Tunna第三季">99、HTTP隧道Tunna第三季</span>
+            <span class="post-date" title="2019-09-21 19:07:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/98_HTTP隧道reGeorg第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="98、HTTP隧道reGeorg第二季">98、HTTP隧道reGeorg第二季</span>
+            <span class="post-date" title="2019-09-21 19:07:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/97_MSF配置自定义Payload控制目标主机权限.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="97、MSF配置自定义Payload控制目标主机权限">97、MSF配置自定义Payload控制目标主机权限</span>
+            <span class="post-date" title="2019-09-21 19:07:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/96_HTTP隧道ABPTTS第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="96、HTTP隧道ABPTTS第一季">96、HTTP隧道ABPTTS第一季</span>
+            <span class="post-date" title="2019-09-21 19:07:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/95_基于Portfwd端口转发.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="95、基于Portfwd端口转发">95、基于Portfwd端口转发</span>
+            <span class="post-date" title="2019-09-21 19:07:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/94_基于实战中的small-payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="94、基于实战中的small-payload">94、基于实战中的small-payload</span>
+            <span class="post-date" title="2019-09-21 19:07:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/93_与CrackMapExec结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="93、与CrackMapExec结合攻击">93、与CrackMapExec结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:07:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/92_实战中的Payload应用.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="92、实战中的Payload应用">92、实战中的Payload应用</span>
+            <span class="post-date" title="2019-09-21 19:07:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/91_从目标文件中做信息搜集第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="91、从目标文件中做信息搜集第一季">91、从目标文件中做信息搜集第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/90_基于白名单zipfldr.dll执行payload第十八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="90、基于白名单zipfldr.dll执行payload第十八季">90、基于白名单zipfldr.dll执行payload第十八季</span>
+            <span class="post-date" title="2019-09-21 19:06:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/89_基于白名单Url.dll执行payload第十七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="89、基于白名单Url.dll执行payload第十七季">89、基于白名单Url.dll执行payload第十七季</span>
+            <span class="post-date" title="2019-09-21 19:06:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/88_基于白名单Ftp.exe执行payload第十九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="88、基于白名单Ftp.exe执行payload第十九季">88、基于白名单Ftp.exe执行payload第十九季</span>
+            <span class="post-date" title="2019-09-21 19:06:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/87_基于白名单Cmstp.exe执行payload第十六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="87、基于白名单Cmstp.exe执行payload第十六季">87、基于白名单Cmstp.exe执行payload第十六季</span>
+            <span class="post-date" title="2019-09-21 19:06:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/86_基于白名单Msiexec执行payload第八季补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="86、基于白名单Msiexec执行payload第八季补充">86、基于白名单Msiexec执行payload第八季补充</span>
+            <span class="post-date" title="2019-09-21 19:06:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/85_基于白名单Pcalua执行payload第十五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="85、基于白名单Pcalua执行payload第十五季">85、基于白名单Pcalua执行payload第十五季</span>
+            <span class="post-date" title="2019-09-21 19:06:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/84_基于白名单Forfiles执行payload第十四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="84、基于白名单Forfiles执行payload第十四季">84、基于白名单Forfiles执行payload第十四季</span>
+            <span class="post-date" title="2019-09-21 19:06:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/83_基于白名单PsExec执行payload第十三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="83、基于白名单PsExec执行payload第十三季">83、基于白名单PsExec执行payload第十三季</span>
+            <span class="post-date" title="2019-09-21 19:06:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/82_基于白名单Odbcconf执行payload第十二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="82、基于白名单Odbcconf执行payload第十二季">82、基于白名单Odbcconf执行payload第十二季</span>
+            <span class="post-date" title="2019-09-21 19:06:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/81_基于白名单Rundll32.exe执行payload第十一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="81、基于白名单Rundll32.exe执行payload第十一季">81、基于白名单Rundll32.exe执行payload第十一季</span>
+            <span class="post-date" title="2019-09-21 19:06:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/80_基于白名单Wmic执行payload第十季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="80、基于白名单Wmic执行payload第十季">80、基于白名单Wmic执行payload第十季</span>
+            <span class="post-date" title="2019-09-21 19:06:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/79_基于白名单Regsvr32执行payload第九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="79、基于白名单Regsvr32执行payload第九季">79、基于白名单Regsvr32执行payload第九季</span>
+            <span class="post-date" title="2019-09-21 19:06:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/78_基于白名单Msiexec执行payload第八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="78、基于白名单Msiexec执行payload第八季">78、基于白名单Msiexec执行payload第八季</span>
+            <span class="post-date" title="2019-09-21 19:06:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/77_基于白名单Csc.exe执行payload第七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="77、基于白名单Csc.exe执行payload第七季">77、基于白名单Csc.exe执行payload第七季</span>
+            <span class="post-date" title="2019-09-21 19:06:26">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/76_基于白名单Compiler.exe执行payload第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="76、基于白名单Compiler.exe执行payload第六季">76、基于白名单Compiler.exe执行payload第六季</span>
+            <span class="post-date" title="2019-09-21 19:06:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/75_基于白名单Mshta.exe执行payload第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="75、基于白名单Mshta.exe执行payload第五季">75、基于白名单Mshta.exe执行payload第五季</span>
+            <span class="post-date" title="2019-09-21 19:06:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/74_基于白名单regsvcs.exe执行payload第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="74、基于白名单regsvcs.exe执行payload第四季">74、基于白名单regsvcs.exe执行payload第四季</span>
+            <span class="post-date" title="2019-09-21 19:06:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/73_基于白名单Regasm.exe执行payload第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="73、基于白名单Regasm.exe执行payload第三季">73、基于白名单Regasm.exe执行payload第三季</span>
+            <span class="post-date" title="2019-09-21 19:06:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/72_基于白名单Installutil.exe执行payload第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="72、基于白名单Installutil.exe执行payload第二季">72、基于白名单Installutil.exe执行payload第二季</span>
+            <span class="post-date" title="2019-09-21 19:06:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/71_基于白名单Msbuild.exe执行payload第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="71、基于白名单Msbuild.exe执行payload第一季">71、基于白名单Msbuild.exe执行payload第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/70_ftp一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="70、ftp一句话下载payload补充">70、ftp一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:06:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/69_渗透-持续渗透-后渗透的本质.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="69、渗透-持续渗透-后渗透的本质">69、渗透-持续渗透-后渗透的本质</span>
+            <span class="post-date" title="2019-09-21 19:06:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/68_基于Ruby内存加载shellcode第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="68、基于Ruby内存加载shellcode第一季">68、基于Ruby内存加载shellcode第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/67_meterpreter下的irb操作第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="67、meterpreter下的irb操作第一季">67、meterpreter下的irb操作第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/66_借助aspx对payload进行分离免杀.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="66、借助aspx对payload进行分离免杀">66、借助aspx对payload进行分离免杀</span>
+            <span class="post-date" title="2019-09-21 19:06:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/65_离线提取目标机hash补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="65、离线提取目标机hash补充">65、离线提取目标机hash补充</span>
+            <span class="post-date" title="2019-09-21 19:06:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/64_高级持续渗透-第八季demo便是远控.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="64、高级持续渗透-第八季demo便是远控">64、高级持续渗透-第八季demo便是远控</span>
+            <span class="post-date" title="2019-09-21 19:05:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/63_高级持续渗透-第七季demo的成长.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="63、高级持续渗透-第七季demo的成长">63、高级持续渗透-第七季demo的成长</span>
+            <span class="post-date" title="2019-09-21 19:05:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/62_高级持续渗透-第六季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="62、高级持续渗透-第六季关于后门">62、高级持续渗透-第六季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/61_高级持续渗透-第五季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="61、高级持续渗透-第五季关于后门">61、高级持续渗透-第五季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/60_高级持续渗透-第四季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="60、高级持续渗透-第四季关于后门">60、高级持续渗透-第四季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/59_高级持续渗透-第三季关于后门补充二.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="59、高级持续渗透-第三季关于后门补充二">59、高级持续渗透-第三季关于后门补充二</span>
+            <span class="post-date" title="2019-09-21 19:05:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/58_高级持续渗透-第二季关于后门补充一.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="58、高级持续渗透-第二季关于后门补充一">58、高级持续渗透-第二季关于后门补充一</span>
+            <span class="post-date" title="2019-09-21 19:05:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/57_高级持续渗透-第一季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="57、高级持续渗透-第一季关于后门">57、高级持续渗透-第一季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/56_离线提取目标机hash.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="56、离线提取目标机hash">56、离线提取目标机hash</span>
+            <span class="post-date" title="2019-09-21 19:05:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/55_与Smbmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="55、与Smbmap结合攻击">55、与Smbmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:05:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/54_基于Powershell做Socks4-5代理.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="54、基于Powershell做Socks4-5代理">54、基于Powershell做Socks4-5代理</span>
+            <span class="post-date" title="2019-09-21 19:05:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/53_内网渗透中的文件传输.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53、内网渗透中的文件传输">53、内网渗透中的文件传输</span>
+            <span class="post-date" title="2019-09-21 19:05:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/52_渗透的本质是信息搜集.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="52、渗透的本质是信息搜集">52、渗透的本质是信息搜集</span>
+            <span class="post-date" title="2019-09-21 19:05:32">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/51_项目回忆：体系的本质是知识点串联.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="51、项目回忆：体系的本质是知识点串联">51、项目回忆：体系的本质是知识点串联</span>
+            <span class="post-date" title="2019-09-21 19:05:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/50_基于SqlDataSourceEnumerator发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="50、基于SqlDataSourceEnumerator发现内网存活主机">50、基于SqlDataSourceEnumerator发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:05:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/49_关于Powershell对抗安全软件.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="49、关于Powershell对抗安全软件">49、关于Powershell对抗安全软件</span>
+            <span class="post-date" title="2019-09-21 19:05:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/48_payload分离免杀思路第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="48、payload分离免杀思路第二季">48、payload分离免杀思路第二季</span>
+            <span class="post-date" title="2019-09-21 19:05:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/47_payload分离免杀思路.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="47、payload分离免杀思路">47、payload分离免杀思路</span>
+            <span class="post-date" title="2019-09-21 19:05:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/46_powershell一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="46、powershell一句话下载payload">46、powershell一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/45_解决bat一句话下载payload黑窗.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="45、解决bat一句话下载payload黑窗">45、解决bat一句话下载payload黑窗</span>
+            <span class="post-date" title="2019-09-21 19:05:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/44_ertutil一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44、ertutil一句话下载payload补充">44、ertutil一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/43_js一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43、js一句话下载payload">43、js一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/42_攻击FTP服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="42、攻击FTP服务">42、攻击FTP服务</span>
+            <span class="post-date" title="2019-09-21 19:05:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/41_bitsadmin一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41、bitsadmin一句话下载payload">41、bitsadmin一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/40_ftp一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="40、ftp一句话下载payload">40、ftp一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/39_vbs一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39、vbs一句话下载payload补充">39、vbs一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/38_certutil一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="38、certutil一句话下载payload">38、certutil一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/37_vbs一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="37、vbs一句话下载payload">37、vbs一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:04:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/36_解决vps上ssh掉线.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="36、解决vps上ssh掉线">36、解决vps上ssh掉线</span>
+            <span class="post-date" title="2019-09-21 19:04:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/35_与Sqlmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="35、与Sqlmap结合攻击">35、与Sqlmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:04:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/34_攻击SqlServer服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="34、攻击SqlServer服务">34、攻击SqlServer服务</span>
+            <span class="post-date" title="2019-09-21 19:04:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/33_攻击Mysql服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="33、攻击Mysql服务">33、攻击Mysql服务</span>
+            <span class="post-date" title="2019-09-21 19:04:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/32_配置vps上的msf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="32、配置vps上的msf">32、配置vps上的msf</span>
+            <span class="post-date" title="2019-09-21 19:04:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/31_msf的前生今世.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="31、msf的前生今世">31、msf的前生今世</span>
+            <span class="post-date" title="2019-09-21 19:04:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/30_解决msfvenom命令自动补全.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="30、解决msfvenom命令自动补全">30、解决msfvenom命令自动补全</span>
+            <span class="post-date" title="2019-09-21 19:04:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/29_发现目标WEB程序敏感目录第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="29、发现目标WEB程序敏感目录第一季">29、发现目标WEB程序敏感目录第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/28_基于MSF发现内网存活主机第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="28、基于MSF发现内网存活主机第六季">28、基于MSF发现内网存活主机第六季</span>
+            <span class="post-date" title="2019-09-21 19:04:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/27_基于MSF发现内网存活主机第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="27、基于MSF发现内网存活主机第五季">27、基于MSF发现内网存活主机第五季</span>
+            <span class="post-date" title="2019-09-21 19:04:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/26_基于MSF发现内网存活主机第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26、基于MSF发现内网存活主机第四季">26、基于MSF发现内网存活主机第四季</span>
+            <span class="post-date" title="2019-09-21 19:04:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/25_基于MSF发现内网存活主机第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="25、基于MSF发现内网存活主机第三季">25、基于MSF发现内网存活主机第三季</span>
+            <span class="post-date" title="2019-09-21 19:04:31">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/24_基于MSF发现内网存活主机第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="24、基于MSF发现内网存活主机第二季">24、基于MSF发现内网存活主机第二季</span>
+            <span class="post-date" title="2019-09-21 19:04:29">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/23_基于MSF发现内网存活主机第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="23、基于MSF发现内网存活主机第一季">23、基于MSF发现内网存活主机第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:27">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/22_基于SMB发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="22、基于SMB发现内网存活主机">22、基于SMB发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:25">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/21_基于ICMP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="21、基于ICMP发现内网存活主机">21、基于ICMP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:23">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/20_基于snmp发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="20、基于snmp发现内网存活主机">20、基于snmp发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:21">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/19_基于netbios发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="19、基于netbios发现内网存活主机">19、基于netbios发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:17">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/18_红蓝对抗渗透测试3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="18、红蓝对抗渗透测试3">18、红蓝对抗渗透测试3</span>
+            <span class="post-date" title="2019-09-21 19:04:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/17_红蓝对抗渗透测试2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="17、红蓝对抗渗透测试2">17、红蓝对抗渗透测试2</span>
+            <span class="post-date" title="2019-09-21 19:04:13">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/16_红蓝对抗渗透测试1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="16、红蓝对抗渗透测试1">16、红蓝对抗渗透测试1</span>
+            <span class="post-date" title="2019-09-21 19:04:11">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/15_基于第十课补充payload2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="15、基于第十课补充payload2">15、基于第十课补充payload2</span>
+            <span class="post-date" title="2019-09-21 19:04:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/14_基于第十课补充payload1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="14、基于第十课补充payload1">14、基于第十课补充payload1</span>
+            <span class="post-date" title="2019-09-21 19:04:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/13_基于ARP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="13、基于ARP发现内网存活主机">13、基于ARP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/12_基于UDP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="12、基于UDP发现内网存活主机">12、基于UDP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/11_工具介绍Veil-Evasion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11、工具介绍Veil-Evasion">11、工具介绍Veil-Evasion</span>
+            <span class="post-date" title="2019-09-21 19:04:01">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/10_msfvenom常用生成payload命令.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10、msfvenom常用生成payload命令">10、msfvenom常用生成payload命令</span>
+            <span class="post-date" title="2019-09-21 19:03:59">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/9_工具介绍-the-backdoor-factory.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="9、工具介绍-the-backdoor-factory">9、工具介绍-the-backdoor-factory</span>
+            <span class="post-date" title="2019-09-21 19:03:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/8_模拟诉求任务攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="8、模拟诉求任务攻击">8、模拟诉求任务攻击</span>
+            <span class="post-date" title="2019-09-21 19:03:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/7_sqlServer常用操作远程桌面语句.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="7、sqlServer常用操作远程桌面语句">7、sqlServer常用操作远程桌面语句</span>
+            <span class="post-date" title="2019-09-21 19:03:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/6_反攻的一次溯源--项目实战3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="6、反攻的一次溯源--项目实战3">6、反攻的一次溯源--项目实战3</span>
+            <span class="post-date" title="2019-09-21 19:03:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/5_工具介绍-Sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="5、工具介绍-Sqlmap">5、工具介绍-Sqlmap</span>
+            <span class="post-date" title="2019-09-21 19:03:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/4_Asp代码审计--项目实战2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4、Asp代码审计--项目实战2">4、Asp代码审计--项目实战2</span>
+            <span class="post-date" title="2019-09-21 19:03:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/3_Delphi代码审计--项目实战1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3、Delphi代码审计--项目实战1">3、Delphi代码审计--项目实战1</span>
+            <span class="post-date" title="2019-09-21 19:03:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/2_Linux提权-依赖exp篇.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2、Linux提权-依赖exp篇">2、Linux提权-依赖exp篇</span>
+            <span class="post-date" title="2019-09-21 19:03:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/1_windows提权-快速查找exp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1、windows提权-快速查找exp">1、windows提权-快速查找exp</span>
+            <span class="post-date" title="2019-09-21 19:03:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-django.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Django">Python Django</span>
+            <span class="post-date" title="2019-08-12 22:33:15">2019/08/12</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dos-colour.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义DOS窗口输出颜色">Python 定义DOS窗口输出颜色</span>
+            <span class="post-date" title="2019-07-13 12:24:55">2019/07/13</span>
+        </a>
+        
+        <a  class="漏洞库 "
+           href="/article/vulnerability-library.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="漏洞库">漏洞库</span>
+            <span class="post-date" title="2019-06-23 05:22:26">2019/06/23</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-task.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)批量下任务工具">Python 绿盟远程安全评估系统(RSAS)批量下任务工具</span>
+            <span class="post-date" title="2019-05-30 21:30:36">2019/05/30</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-Intranet.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-内网">渗透测试-内网</span>
+            <span class="post-date" title="2019-04-07 17:09:44">2019/04/07</span>
+        </a>
+        
+        <a  class="Git "
+           href="/article/git.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2019-03-24 15:23:53">2019/03/24</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-ewebs.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-极通EWEBS应用虚拟化系统">代码审计-极通EWEBS应用虚拟化系统</span>
+            <span class="post-date" title="2019-03-16 13:58:07">2019/03/16</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dr.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写">代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写</span>
+            <span class="post-date" title="2019-02-28 09:41:29">2019/02/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件上传">代码审计-DVWA-文件上传</span>
+            <span class="post-date" title="2019-01-29 20:29:52">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-inclusion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件包含">代码审计-DVWA-文件包含</span>
+            <span class="post-date" title="2019-01-29 10:14:15">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-command-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-命令注入">代码审计-DVWA-命令注入</span>
+            <span class="post-date" title="2019-01-28 19:42:56">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-axublog.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-Axublog建站系统">代码审计-Axublog建站系统</span>
+            <span class="post-date" title="2019-01-28 09:41:29">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计">代码审计</span>
+            <span class="post-date" title="2019-01-27 15:40:29">2019/01/27</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ipsec.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows 利用IPSec对指定的源地址进行访问限制">Windows 利用IPSec对指定的源地址进行访问限制</span>
+            <span class="post-date" title="2019-01-26 00:48:23">2019/01/26</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-metasploit-framework.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-MetaSploit Framework">渗透测试-MetaSploit Framework</span>
+            <span class="post-date" title="2018-11-25 13:25:41">2018/11/25</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-Sqlmap">渗透测试-Sqlmap</span>
+            <span class="post-date" title="2018-11-24 21:56:51">2018/11/24</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-burpsuite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-BurpSuite">渗透测试-BurpSuite</span>
+            <span class="post-date" title="2018-11-22 21:10:32">2018/11/22</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-sqlite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python SQLite数据库操作">Python SQLite数据库操作</span>
+            <span class="post-date" title="2018-11-22 13:30:35">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-logic-flaw.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-逻辑漏洞">渗透测试-逻辑漏洞</span>
+            <span class="post-date" title="2018-11-22 10:01:10">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-info.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-信息收集">渗透测试-信息收集</span>
+            <span class="post-date" title="2018-11-21 21:33:27">2018/11/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-serialization.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-序列化与反序列化">渗透测试-序列化与反序列化</span>
+            <span class="post-date" title="2018-11-20 21:11:11">2018/11/20</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-code-command-execute.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-代码执行、命令执行">渗透测试-代码执行、命令执行</span>
+            <span class="post-date" title="2018-11-08 06:24:29">2018/11/08</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-Include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件包含、文件读取">渗透测试-文件包含、文件读取</span>
+            <span class="post-date" title="2018-11-07 06:31:06">2018/11/07</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件上传">渗透测试-文件上传</span>
+            <span class="post-date" title="2018-11-04 14:38:58">2018/11/04</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-webshell.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-webshell">渗透测试-webshell</span>
+            <span class="post-date" title="2018-10-16 20:57:13">2018/10/16</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-xss-cslf-csrf-xxe-ssrf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-XSS CSLF CSRF XXE SSRF">渗透测试-XSS CSLF CSRF XXE SSRF</span>
+            <span class="post-date" title="2018-10-13 23:55:34">2018/10/13</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-awvs-scan.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]">Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]</span>
+            <span class="post-date" title="2018-10-03 01:04:01">2018/10/03</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sql-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-SQL注入">渗透测试-SQL注入</span>
+            <span class="post-date" title="2018-09-23 13:09:07">2018/09/23</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-cookie-session.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-cookie与session">渗透测试-cookie与session</span>
+            <span class="post-date" title="2018-09-21 19:56:02">2018/09/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-test.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-测试">渗透测试-测试</span>
+            <span class="post-date" title="2018-09-20 20:58:15">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-object.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 面向对象">PHP 面向对象</span>
+            <span class="post-date" title="2018-09-20 20:19:21">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 操作MySQL">PHP 操作MySQL</span>
+            <span class="post-date" title="2018-09-20 07:38:17">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 文件包含">PHP 文件包含</span>
+            <span class="post-date" title="2018-09-17 13:06:43">2018/09/17</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL数据库操作">MySQL数据库操作</span>
+            <span class="post-date" title="2018-09-17 12:53:05">2018/09/17</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-get-post.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP GET、POST请求、三元运算符">PHP GET、POST请求、三元运算符</span>
+            <span class="post-date" title="2018-09-16 21:28:36">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-time-file.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 时间戳、系统变量、文件操作">PHP 时间戳、系统变量、文件操作</span>
+            <span class="post-date" title="2018-09-16 15:48:19">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-array.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数组">PHP 数组</span>
+            <span class="post-date" title="2018-09-16 00:52:50">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 函数">PHP 函数</span>
+            <span class="post-date" title="2018-09-15 23:04:27">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数据类型、对象、常量、循环">PHP 数据类型、对象、常量、循环</span>
+            <span class="post-date" title="2018-09-15 20:25:08">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 变量">PHP 变量</span>
+            <span class="post-date" title="2018-09-15 19:50:14">2018/09/15</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-scan-port-web.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 自动化漏洞扫描器">Python 自动化漏洞扫描器</span>
+            <span class="post-date" title="2018-09-08 17:36:25">2018/09/08</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-rsas-count.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS统计已经整改的漏洞数据">Python RSAS统计已经整改的漏洞数据</span>
+            <span class="post-date" title="2018-09-05 22:06:00">2018/09/05</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-add-leak.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS添加新增漏洞数据">Python RSAS添加新增漏洞数据</span>
+            <span class="post-date" title="2018-08-23 20:50:08">2018/08/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-excel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Excel操作">Python Excel操作</span>
+            <span class="post-date" title="2018-08-15 22:29:20">2018/08/15</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-pyqt5.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python PyQt5">Python PyQt5</span>
+            <span class="post-date" title="2018-08-11 16:04:01">2018/08/11</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-nmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python nmap">Python nmap</span>
+            <span class="post-date" title="2018-07-30 22:46:30">2018/07/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-requests.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python requests">Python requests</span>
+            <span class="post-date" title="2018-07-29 14:36:37">2018/07/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-urllib-request.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python urllib.request">Python urllib.request</span>
+            <span class="post-date" title="2018-07-28 20:09:28">2018/07/28</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-re.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 正则表达式">Python 正则表达式</span>
+            <span class="post-date" title="2018-07-26 20:27:28">2018/07/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-tcp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-TCP">Python Socket套接字-TCP</span>
+            <span class="post-date" title="2018-07-25 20:39:27">2018/07/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-udp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-UDP">Python Socket套接字-UDP</span>
+            <span class="post-date" title="2018-07-22 22:51:21">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-threading.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 多线程">Python 多线程</span>
+            <span class="post-date" title="2018-07-22 14:01:06">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-property.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 内建属性">Python 内建属性</span>
+            <span class="post-date" title="2018-07-21 08:59:26">2018/07/21</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-contrast.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 符合性评测表材料对比工具">Python 符合性评测表材料对比工具</span>
+            <span class="post-date" title="2018-07-19 22:22:45">2018/07/19</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-action-scope.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 动态语言">Python 动态语言</span>
+            <span class="post-date" title="2018-07-14 22:28:35">2018/07/14</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-decorators.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 装饰器">Python 装饰器</span>
+            <span class="post-date" title="2018-07-10 21:25:51">2018/07/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-closure.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 闭包">Python 闭包</span>
+            <span class="post-date" title="2018-07-10 20:55:01">2018/07/10</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-xml-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基线脚本批量重命名">Python 基线脚本批量重命名</span>
+            <span class="post-date" title="2018-07-06 10:54:26">2018/07/06</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 生成器、迭代器">Python 生成器、迭代器</span>
+            <span class="post-date" title="2018-06-26 20:17:01">2018/06/26</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-tel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 用户名穷举">Python 用户名穷举</span>
+            <span class="post-date" title="2018-06-23 23:24:26">2018/06/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-tkinter.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python TKinter">Python TKinter</span>
+            <span class="post-date" title="2018-06-10 13:42:41">2018/06/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-import-module.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 模块导入、深拷贝、浅拷贝、私有化">Python 模块导入、深拷贝、浅拷贝、私有化</span>
+            <span class="post-date" title="2018-06-07 20:57:28">2018/06/07</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input-folder-name.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取目录下的指定文件名">Python 获取目录下的指定文件名</span>
+            <span class="post-date" title="2018-05-05 21:48:56">2018/05/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-zipfile.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python zipfile无需解压直接读取zip中的文件内容">Python zipfile无需解压直接读取zip中的文件内容</span>
+            <span class="post-date" title="2018-05-05 21:21:13">2018/05/05</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-tool.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具">Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具</span>
+            <span class="post-date" title="2018-04-25 23:04:01">2018/04/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-plane.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 打飞机">Python 打飞机</span>
+            <span class="post-date" title="2018-04-24 21:57:15">2018/04/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application-save.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 名片管理保存到文件中">Python 名片管理保存到文件中</span>
+            <span class="post-date" title="2018-04-20 23:27:28">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-argv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 给程序传参">Python 给程序传参</span>
+            <span class="post-date" title="2018-04-20 21:26:34">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-exception.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 异常处理">Python 异常处理</span>
+            <span class="post-date" title="2018-04-05 23:12:09">2018/04/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-in-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象实现对象插对象">Python 面对对象实现对象插对象</span>
+            <span class="post-date" title="2018-04-01 10:35:51">2018/04/01</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象烤地鼠">Python 面对对象烤地鼠</span>
+            <span class="post-date" title="2018-03-31 23:10:41">2018/03/31</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象">Python 面对对象</span>
+            <span class="post-date" title="2018-03-30 23:32:28">2018/03/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-batch-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量重命名">Python 批量重命名</span>
+            <span class="post-date" title="2018-03-29 22:40:03">2018/03/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-write-copy-cate.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件写入复制重命名">Python 文件写入复制重命名</span>
+            <span class="post-date" title="2018-03-27 23:24:34">2018/03/27</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-file-processing.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件的操作">Python 文件的操作</span>
+            <span class="post-date" title="2018-03-26 23:10:34">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-value-exchange.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 两个值交换">Python 两个值交换</span>
+            <span class="post-date" title="2018-03-26 22:31:53">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-anonymous-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 匿名函数">Python 匿名函数</span>
+            <span class="post-date" title="2018-03-26 20:27:28">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-recursion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 递归">Python 递归</span>
+            <span class="post-date" title="2018-03-25 23:09:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 数据类型">Python 数据类型</span>
+            <span class="post-date" title="2018-03-25 22:24:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 函数改进名片管理">Python 函数改进名片管理</span>
+            <span class="post-date" title="2018-03-25 11:48:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义函数">Python 定义函数</span>
+            <span class="post-date" title="2018-03-25 09:01:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典列表嵌套加标记实现名片管理">Python 字典列表嵌套加标记实现名片管理</span>
+            <span class="post-date" title="2018-03-24 11:20:28">2018/03/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典">Python 字典</span>
+            <span class="post-date" title="2018-03-24 10:53:28">2018/03/24</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-get-links.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取网页所有超链接">Python 获取网页所有超链接</span>
+            <span class="post-date" title="2018-03-21 20:39:45">2018/03/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表实现名字管理">Python 列表实现名字管理</span>
+            <span class="post-date" title="2018-03-18 17:48:45">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-string.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字符串">Python 字符串</span>
+            <span class="post-date" title="2018-03-18 15:33:58">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表">Python 列表</span>
+            <span class="post-date" title="2018-03-18 14:53:28">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-while.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python while">Python while</span>
+            <span class="post-date" title="2018-03-17 20:17:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-if-esle.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python if else">Python if else</span>
+            <span class="post-date" title="2018-03-17 18:02:27">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python input %s 传参">Python input %s 传参</span>
+            <span class="post-date" title="2018-03-17 17:56:21">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义变量">Python 定义变量</span>
+            <span class="post-date" title="2018-03-17 17:50:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-basics.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基础">Python 基础</span>
+            <span class="post-date" title="2018-03-17 17:34:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-command.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础命令">Linux 基础命令</span>
+            <span class="post-date" title="2018-03-15 22:17:28">2018/03/15</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-first.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础知识">Linux 基础知识</span>
+            <span class="post-date" title="2018-03-11 14:41:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-what-socket.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="什么是socket">什么是socket</span>
+            <span class="post-date" title="2018-03-11 12:00:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-mask-calculation.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="子网掩码的计算">子网掩码的计算</span>
+            <span class="post-date" title="2018-03-10 16:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-osi-model.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSI七层模型详解">OSI七层模型详解</span>
+            <span class="post-date" title="2018-03-10 01:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-the-code.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="原码补码反码">原码补码反码</span>
+            <span class="post-date" title="2018-03-10 00:04:58">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-hex-convert.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="进制之间的转换">进制之间的转换</span>
+            <span class="post-date" title="2018-03-09 20:34:28">2018/03/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-metasploit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装Metasploit">Windows10 Ubuntu子系统下安装Metasploit</span>
+            <span class="post-date" title="2018-02-18 22:04:56">2018/02/18</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-install-ubuntu.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统初始配置">Windows10 Ubuntu子系统初始配置</span>
+            <span class="post-date" title="2018-02-17 13:21:23">2018/02/17</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-opencv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置OpenCV图像处理">Windows10 Ubuntu子系统配置OpenCV图像处理</span>
+            <span class="post-date" title="2018-02-10 15:45:23">2018/02/10</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-linux-ssh.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置SSH服务">Windows10 Ubuntu子系统配置SSH服务</span>
+            <span class="post-date" title="2018-02-09 16:04:10">2018/02/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装MySQL">Windows10 Ubuntu子系统下安装MySQL</span>
+            <span class="post-date" title="2018-01-28 11:40:01">2018/01/28</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-site-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量检测网站存活（多线程）">Python 批量检测网站存活（多线程）</span>
+            <span class="post-date" title="2017-10-29 15:47:00">2017/10/29</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-5_工具介绍-Sqlmap" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">5、工具介绍-Sqlmap</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Micro8">Micro8</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-29 20:11:11'>2019-09-21 19:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sqlmap参数详解："><span class="toc-text">sqlmap参数详解：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Options（选项）"><span class="toc-text">1、Options（选项）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Target（目标）"><span class="toc-text">2、Target（目标）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Request（请求）"><span class="toc-text">3、Request（请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、Optimization（优化）"><span class="toc-text">4、Optimization（优化）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、Injection（注入）"><span class="toc-text">5、Injection（注入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、Detection（检测）"><span class="toc-text">6、Detection（检测）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、Techniques（技巧）"><span class="toc-text">7、Techniques（技巧）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、Fingerprint（指纹）"><span class="toc-text">8、Fingerprint（指纹）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、Enumeration（枚举）"><span class="toc-text">9、Enumeration（枚举）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、Brute-Force（蛮力）"><span class="toc-text">10、Brute Force（蛮力）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、User-defined-function-injection（用户自定义函数注入）"><span class="toc-text">11、User-defined function injection（用户自定义函数注入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、File-system-access（访问文件系统）"><span class="toc-text">12、File system access（访问文件系统）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、Operating-system-access（操作系统访问）"><span class="toc-text">13、Operating system access（操作系统访问）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、Windows-registry-access（Windows注册表访问）"><span class="toc-text">14、Windows registry access（Windows注册表访问）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、General（一般）"><span class="toc-text">15、General（一般）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、Miscellaneous（杂项）"><span class="toc-text">16、Miscellaneous（杂项）</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="sqlmap参数详解："><a href="#sqlmap参数详解：" class="headerlink" title="sqlmap参数详解："></a>sqlmap参数详解：</h2><p>由于Sqlmap 是常用工具之一，所以本篇的篇幅较长，详解一次所有参数。</p>
+<h3 id="1、Options（选项）"><a href="#1、Options（选项）" class="headerlink" title="1、Options（选项）"></a>1、Options（选项）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Usage: python sqlmap.py [options]</span><br><span class="line"></span><br><span class="line">Options（选项）:</span><br><span class="line"></span><br><span class="line">-h, --help Show basic help message and exit</span><br><span class="line">## 展示帮助文档 参数</span><br><span class="line"></span><br><span class="line">-hh Show advanced help message and exit</span><br><span class="line">## 展示详细帮助文档参数</span><br><span class="line"></span><br><span class="line">--version Show program&apos;s version number and exit</span><br><span class="line">## 显示程序的版本号</span><br><span class="line"></span><br><span class="line">-v VERBOSE Verbosity level: 0-6 (default 1)</span><br><span class="line">## 详细级别：0-6（默认为1）</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、Target（目标）"><a href="#2、Target（目标）" class="headerlink" title="2、Target（目标）"></a>2、Target（目标）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Target（目标）:</span><br><span class="line"></span><br><span class="line">At least one of these options has to be provided to define the target(s)</span><br><span class="line"></span><br><span class="line">-d DIRECT Connection string for direct database connection</span><br><span class="line">## 指定具体数据库</span><br><span class="line"></span><br><span class="line">-u URL, --url=URL Target URL (e.g. &quot;http://www.site.com/vuln.php?id=1&quot;)</span><br><span class="line">## 目标URL</span><br><span class="line"></span><br><span class="line">-l LOGFILE Parse target(s) from Burp or WebScarab proxy log file</span><br><span class="line">## 解析目标(s)从Burp或WebScarab代理日志文件</span><br><span class="line"></span><br><span class="line">-x SITEMAPURL Parse target(s) from remote sitemap(.xml) file</span><br><span class="line">## 解析目标(s)从远程站点地图文件(.xml)</span><br><span class="line"></span><br><span class="line">-m BULKFILE Scan multiple targets given in a textual file</span><br><span class="line">## 扫描文本文件中给出的多个目标</span><br><span class="line"></span><br><span class="line">-r REQUESTFILE Load HTTP request from a file</span><br><span class="line">## 从本地文件加载HTTP请求 ，多用于post注入。</span><br><span class="line"></span><br><span class="line">-g GOOGLEDORK Process Google dork results as target URLs</span><br><span class="line">## 处理Google的结果作为目标URL。</span><br><span class="line"></span><br><span class="line">-c CONFIGFILE Load options from a configuration INI file</span><br><span class="line">## 从INI配置文件中加载选项。</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、Request（请求）"><a href="#3、Request（请求）" class="headerlink" title="3、Request（请求）"></a>3、Request（请求）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">Request（请求）:</span><br><span class="line"></span><br><span class="line">These options can be used to specify how to connect to the target URL</span><br><span class="line">## 这些选项可以用来指定如何连接到目标URL。</span><br><span class="line"></span><br><span class="line">--method=METHOD Force usage of given HTTP method (e.g. PUT)</span><br><span class="line">## 强制使用给定的HTTP方法（e.g. PUT）</span><br><span class="line"></span><br><span class="line">--data=DATA Data string to be sent through POST</span><br><span class="line">## 通过POST发送的数据字符串</span><br><span class="line"></span><br><span class="line">--param-del=PARA.. Character used for splitting parameter values</span><br><span class="line">## 用于拆分参数值的字符</span><br><span class="line"></span><br><span class="line">--cookie=COOKIE HTTP Cookie header value HTTP</span><br><span class="line">## Cookie头的值</span><br><span class="line"></span><br><span class="line">--cookie-del=COO.. Character used for splitting cookie values</span><br><span class="line">## 用于分割Cookie值的字符</span><br><span class="line"></span><br><span class="line">--load-cookies=L.. File containing cookies in Netscape/wget format</span><br><span class="line">## 包含Netscape / wget格式的cookie的文件</span><br><span class="line"></span><br><span class="line">--drop-set-cookie Ignore Set-Cookie header from response</span><br><span class="line">## 从响应中忽略Set-Cookie头</span><br><span class="line"></span><br><span class="line">--user-agent=AGENT HTTP User-Agent header value</span><br><span class="line">## 指定 HTTP User - Agent头</span><br><span class="line"></span><br><span class="line">--random-agent Use randomly selected HTTP User-Agent header value</span><br><span class="line">##  使用随机选定的HTTP User - Agent头</span><br><span class="line"></span><br><span class="line">--host=HOST HTTP Host header value</span><br><span class="line">## HTTP主机头值</span><br><span class="line"></span><br><span class="line">--referer=REFERER HTTP Referer header value</span><br><span class="line">##  指定 HTTP Referer头</span><br><span class="line"></span><br><span class="line">-H HEADER, --hea.. Extra header (e.g. &quot;X-Forwarded-For: 127.0.0.1&quot;)</span><br><span class="line">## 额外header</span><br><span class="line"></span><br><span class="line">--headers=HEADERS Extra headers (e.g. &quot;Accept-Language: fr\\nETag: 123&quot;)</span><br><span class="line">## 额外header</span><br><span class="line"></span><br><span class="line">--auth-type=AUTH.. HTTP authentication type (Basic, Digest, NTLM or PKI)HTTP</span><br><span class="line">## 认证类型(Basic, Digest, NTLM or PKI)</span><br><span class="line"></span><br><span class="line">--auth-cred=AUTH.. HTTP authentication credentials (name:password)</span><br><span class="line">##  HTTP认证凭证(name:password)</span><br><span class="line"></span><br><span class="line">--auth-file=AUTH.. HTTP authentication PEM cert/private key file</span><br><span class="line">## HTTP认证 PEM认证/私钥文件</span><br><span class="line"></span><br><span class="line">--ignore-401 Ignore HTTP Error 401 (Unauthorized)</span><br><span class="line">## 忽略HTTP错误401</span><br><span class="line"></span><br><span class="line">--proxy=PROXY Use a proxy to connect to the target URL</span><br><span class="line">## 使用代理连接到目标网址</span><br><span class="line"></span><br><span class="line">--proxy-cred=PRO.. Proxy authentication credentials (name:password)</span><br><span class="line">## 代理认证证书(name:password)</span><br><span class="line"></span><br><span class="line">--proxy-file=PRO.. Load proxy list from a file</span><br><span class="line">## 从文件中加载代理列表</span><br><span class="line"></span><br><span class="line">--ignore-proxy Ignore system default proxy settings</span><br><span class="line">## 忽略系统默认代理设置</span><br><span class="line"></span><br><span class="line">--tor Use Tor anonymity network</span><br><span class="line">## 使用Tor匿名网络</span><br><span class="line"></span><br><span class="line">--tor-port=TORPORT Set Tor proxy port other than default</span><br><span class="line">##  设置Tor代理端口而不是默认值</span><br><span class="line"></span><br><span class="line">--tor-type=TORTYPE Set Tor proxy type (HTTP (default), SOCKS4 or SOCKS5)</span><br><span class="line">## 设置Tor代理类型</span><br><span class="line"></span><br><span class="line">--check-tor Check to see if Tor is used properly</span><br><span class="line">## 检查Tor是否正确使用</span><br><span class="line"></span><br><span class="line">--delay=DELAY Delay in seconds between each HTTP request</span><br><span class="line">## 每个HTTP请求之间的延迟（秒）</span><br><span class="line"></span><br><span class="line">--timeout=TIMEOUT Seconds to wait before timeout connection (default 30)</span><br><span class="line">## 秒超时连接前等待（默认30）</span><br><span class="line"></span><br><span class="line">--retries=RETRIES Retries when the connection timeouts (default 3)</span><br><span class="line">##  连接超时时重试（默认值3）</span><br><span class="line"></span><br><span class="line">--randomize=RPARAM Randomly change value for given parameter(s)</span><br><span class="line">## 随机更改给定参数的值(s)</span><br><span class="line"></span><br><span class="line">--safe-url=SAFEURL URL address to visit frequently during testing</span><br><span class="line">## 在测试期间频繁访问的URL地址</span><br><span class="line"></span><br><span class="line">--safe-post=SAFE.. POST data to send to a safe URL</span><br><span class="line">## POST数据发送到安全URL</span><br><span class="line"></span><br><span class="line">--safe-req=SAFER.. Load safe HTTP request from a file</span><br><span class="line">## 从文件加载安全HTTP请求</span><br><span class="line"></span><br><span class="line">--safe-freq=SAFE.. Test requests between two visits to a given safe URL</span><br><span class="line">## 在两次访问给定安全网址之间测试请求</span><br><span class="line"></span><br><span class="line">--skip-urlencode Skip URL encoding of payload data</span><br><span class="line">## 跳过有效载荷数据的URL编码</span><br><span class="line"></span><br><span class="line">--csrf-token=CSR.. Parameter used to hold anti-CSRF token</span><br><span class="line">## 参数用于保存anti-CSRF令牌</span><br><span class="line"></span><br><span class="line">--csrf-url=CSRFURL URL address to visit to extract anti-CSRF token</span><br><span class="line">## 提取anti-CSRF URL地址访问令牌</span><br><span class="line"></span><br><span class="line">--force-ssl Force usage of SSL/HTTPS</span><br><span class="line">## 强制使用SSL /HTTPS</span><br><span class="line"></span><br><span class="line">--hpp Use HTTP parameter pollution method</span><br><span class="line">## 使用HTTP参数pollution的方法</span><br><span class="line"></span><br><span class="line">--eval=EVALCODE Evaluate provided Python code before the request (e.g. 评估请求之前提供Python代码&quot;import hashlib;id2=hashlib.md5(id).hexdigest()&quot;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、Optimization（优化）"><a href="#4、Optimization（优化）" class="headerlink" title="4、Optimization（优化）"></a>4、Optimization（优化）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Optimization（优化）:</span><br><span class="line"></span><br><span class="line">These options can be used to optimize the performance of sqlmap</span><br><span class="line">## 这些选项可用于优化sqlmap的性能</span><br><span class="line"></span><br><span class="line">-o Turn on all optimization switches</span><br><span class="line">## 开启所有优化开关</span><br><span class="line"></span><br><span class="line">--predict-output Predict common queries output</span><br><span class="line">## 预测常见的查询输出</span><br><span class="line"></span><br><span class="line">--keep-alive Use persistent HTTP(s) connections</span><br><span class="line">## 使用持久的HTTP（S）连接</span><br><span class="line"></span><br><span class="line">--null-connection Retrieve page length without actual HTTP response body</span><br><span class="line">## 从没有实际的HTTP响应体中检索页面长度</span><br><span class="line"></span><br><span class="line">--threads=THREADS Max number of concurrent HTTP(s) requests (default 1)</span><br><span class="line">## 最大的HTTP（S）请求并发量（默认为1）</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、Injection（注入）"><a href="#5、Injection（注入）" class="headerlink" title="5、Injection（注入）"></a>5、Injection（注入）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">Injection（注入）:</span><br><span class="line"></span><br><span class="line">These options can be used to specify which parameters to test for, provide custom injection payloads and optional tampering scripts</span><br><span class="line">##  这些选项可以用来指定测试哪些参数， 提供自定义的注入payloads和可选篡改脚本。</span><br><span class="line"></span><br><span class="line">-p TESTPARAMETER Testable parameter(s)</span><br><span class="line">## 可测试的参数（S）</span><br><span class="line"></span><br><span class="line">--skip=SKIP Skip testing for given parameter(s)</span><br><span class="line">## 跳过对给定参数的测试</span><br><span class="line"></span><br><span class="line">--skip-static Skip testing parameters that not appear to be dynamic</span><br><span class="line">## 跳过测试不显示为动态的参数</span><br><span class="line"></span><br><span class="line">--param-exclude=.. Regexp to exclude parameters from testing (e.g. &quot;ses&quot;)</span><br><span class="line">## 使用正则表达式排除参数进行测试（e.g. &quot;ses&quot;）</span><br><span class="line"></span><br><span class="line">--dbms=DBMS Force back-end DBMS to this value</span><br><span class="line">## 强制后端的DBMS为此值</span><br><span class="line"></span><br><span class="line">--dbms-cred=DBMS.. DBMS authentication credentials (user:password)</span><br><span class="line">## DBMS认证凭证(user:password)</span><br><span class="line"></span><br><span class="line">--os=OS Force back-end DBMS operating system to this value</span><br><span class="line">## 强制后端的DBMS操作系统为这个值</span><br><span class="line"></span><br><span class="line">--invalid-bignum Use big numbers for invalidating values</span><br><span class="line">## 使用大数字使值无效</span><br><span class="line"></span><br><span class="line">--invalid-logical Use logical operations for invalidating values</span><br><span class="line">## 使用逻辑操作使值无效</span><br><span class="line"></span><br><span class="line">--invalid-string Use random strings for invalidating values</span><br><span class="line">## 使用随机字符串使值无效</span><br><span class="line"></span><br><span class="line">--no-cast Turn off payload casting mechanism</span><br><span class="line">## 关闭有效载荷铸造机制</span><br><span class="line"></span><br><span class="line">--no-escape Turn off string escaping mechanism</span><br><span class="line">## 关闭字符串转义机制</span><br><span class="line"></span><br><span class="line">--prefix=PREFIX Injection payload prefix string</span><br><span class="line">## 注入payload字符串前缀</span><br><span class="line"></span><br><span class="line">--suffix=SUFFIX Injection payload suffix string</span><br><span class="line">## 注入payload字符串后缀</span><br><span class="line"></span><br><span class="line">--tamper=TAMPER Use given script(s) for tampering injection data</span><br><span class="line">## 使用给定的脚本（S）篡改注入数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、Detection（检测）"><a href="#6、Detection（检测）" class="headerlink" title="6、Detection（检测）"></a>6、Detection（检测）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Detection（检测）:</span><br><span class="line">These options can be used to customize the detection phase</span><br><span class="line">## 这些选项可以用来指定在SQL盲注时如何解析和比较HTTP响应页面的内容。</span><br><span class="line"></span><br><span class="line">--level=LEVEL Level of tests to perform (1-5, default 1)</span><br><span class="line">## 执行测试的等级（1-5，默认为1）</span><br><span class="line"></span><br><span class="line">--risk=RISK Risk of tests to perform (1-3, default 1)</span><br><span class="line">## 执行测试的风险（0-3，默认为1）</span><br><span class="line"></span><br><span class="line">--string=STRING String to match when query is evaluated to True</span><br><span class="line">##  查询时有效时在页面匹配字符串</span><br><span class="line"></span><br><span class="line">--not-string=NOT.. String to match when query is evaluated to False</span><br><span class="line">## 当查询求值为无效时匹配的字符串</span><br><span class="line"></span><br><span class="line">--regexp=REGEXP Regexp to match when query is evaluated to True</span><br><span class="line">## 查询时有效时在页面匹配正则表达式</span><br><span class="line"></span><br><span class="line">--code=CODE HTTP code to match when query is evaluated to True</span><br><span class="line">## 当查询求值为True时匹配的HTTP代码</span><br><span class="line"></span><br><span class="line">--text-only Compare pages based only on the textual content</span><br><span class="line">## 仅基于在文本内容比较网页</span><br><span class="line"></span><br><span class="line">--titles Compare pages based only on their titles</span><br><span class="line">##  仅根据他们的标题进行比较</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、Techniques（技巧）"><a href="#7、Techniques（技巧）" class="headerlink" title="7、Techniques（技巧）"></a>7、Techniques（技巧）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Techniques（技巧）:</span><br><span class="line">These options can be used to tweak testing of specific SQL injection techniques</span><br><span class="line">## 这些选项可用于调整具体的SQL注入测试。</span><br><span class="line"></span><br><span class="line">--technique=TECH SQL injection techniques to use (default &quot;BEUSTQ&quot;)</span><br><span class="line">## SQL 注入技术测试（默认BEUST）</span><br><span class="line"></span><br><span class="line">--time-sec=TIMESEC Seconds to delay the DBMS response (default 5)</span><br><span class="line">##  DBMS响应的延迟时间（默认为5秒）</span><br><span class="line"></span><br><span class="line">--union-cols=UCOLS Range of columns to test for UNION query SQL injection</span><br><span class="line">##  定列范围用于测试UNION查询注入</span><br><span class="line"></span><br><span class="line">--union-char=UCHAR Character to use for bruteforcing number of columns</span><br><span class="line">##  用于暴力猜解列数的字符</span><br><span class="line"></span><br><span class="line">--union-from=UFROM Table to use in FROM part of UNION query SQL injection</span><br><span class="line">##  要在UNION查询SQL注入的FROM部分使用的表</span><br><span class="line"></span><br><span class="line">--dns-domain=DNS.. Domain name used for DNS exfiltration attack</span><br><span class="line">##  域名用于DNS漏出攻击</span><br><span class="line"></span><br><span class="line">--second-order=S.. Resulting page URL searched for second-order response</span><br><span class="line">## 生成页面的URL搜索为second-order响应</span><br></pre></td></tr></table></figure>
+
+<h3 id="8、Fingerprint（指纹）"><a href="#8、Fingerprint（指纹）" class="headerlink" title="8、Fingerprint（指纹）"></a>8、Fingerprint（指纹）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Fingerprint（指纹）:</span><br><span class="line"></span><br><span class="line">-f, --fingerprint Perform an extensive DBMS version fingerprint</span><br><span class="line">## 执行检查广泛的DBMS版本指纹</span><br></pre></td></tr></table></figure>
+
+<h3 id="9、Enumeration（枚举）"><a href="#9、Enumeration（枚举）" class="headerlink" title="9、Enumeration（枚举）"></a>9、Enumeration（枚举）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">Enumeration（枚举）:</span><br><span class="line"></span><br><span class="line">These options can be used to enumerate the back-end database management system information, structure and data contained in the tables. Moreover you can run your own SQL statements</span><br><span class="line">## 这些选项可以用来列举后端数据库管理系统的信息、表中的结构和数据。此外，您还可以运行您自己的SQL语句。</span><br><span class="line"></span><br><span class="line">-a, --all Retrieve everything</span><br><span class="line">## 检索一切</span><br><span class="line"></span><br><span class="line">-b, --banner Retrieve DBMS banner</span><br><span class="line">## 检索数据库管理系统的标识</span><br><span class="line"></span><br><span class="line">--current-user Retrieve DBMS current user</span><br><span class="line">##  检索数据库管理系统的 标识</span><br><span class="line"></span><br><span class="line">--current-db Retrieve DBMS current database</span><br><span class="line">## 检索数据库管理系统当前数据库</span><br><span class="line"></span><br><span class="line">-hostname Retrieve DBMS server hostname</span><br><span class="line">## 检索数据库服务器的主机名</span><br><span class="line"></span><br><span class="line">--is-dba Detect if the DBMS current user is DBA</span><br><span class="line">## 检测DBMS当前用户是否DBA</span><br><span class="line"></span><br><span class="line">--users Enumerate DBMS users</span><br><span class="line">## 枚举数据库管理系统用户</span><br><span class="line"></span><br><span class="line">--passwords Enumerate DBMS users password hashes</span><br><span class="line">## 枚举数据库管理系统用户密码哈希</span><br><span class="line"></span><br><span class="line">--privileges Enumerate DBMS users privileges</span><br><span class="line">## 枚举数据库管理系统用户的权限</span><br><span class="line"></span><br><span class="line">--roles Enumerate DBMS users roles</span><br><span class="line">## 枚举数据库管理系统用户的角色</span><br><span class="line"></span><br><span class="line">--dbs Enumerate DBMS databases</span><br><span class="line">## 枚举数据库管理系统数据库</span><br><span class="line"></span><br><span class="line">--tables Enumerate DBMS database tables</span><br><span class="line">##  枚举的DBMS数据库中的表</span><br><span class="line"></span><br><span class="line">--columns Enumerate DBMS database table columns</span><br><span class="line">## 枚举DBMS数据库表列</span><br><span class="line"></span><br><span class="line">--schema Enumerate DBMS schema</span><br><span class="line">## 枚举数据库架构</span><br><span class="line"></span><br><span class="line">--count Retrieve number of entries for table(s)</span><br><span class="line">## 检索表的条目数</span><br><span class="line"></span><br><span class="line">--dump Dump DBMS database table entries</span><br><span class="line">##  转储数据库管理系统的数据库中的表项</span><br><span class="line"></span><br><span class="line">--dump-all Dump all DBMS databases tables entries</span><br><span class="line">## 转储数据库管理系统的数据库中的表项</span><br><span class="line"></span><br><span class="line">--search Search column(s), table(s) and/or database name(s)</span><br><span class="line">##  搜索列（S），表（S）和/或数据库名称（S）</span><br><span class="line"></span><br><span class="line">--comments Retrieve DBMS comments</span><br><span class="line">##  检索数据库的comments(注释、评论)</span><br><span class="line"></span><br><span class="line">-D DB DBMS database to enumerate</span><br><span class="line">## 要进行枚举的数据库名</span><br><span class="line"></span><br><span class="line">-T TBL DBMS database table(s) to enumerate</span><br><span class="line">##  要进行枚举的数据库表</span><br><span class="line"></span><br><span class="line">-C COL DBMS database table column(s) to enumerate</span><br><span class="line">## 要进行枚举的数据库列</span><br><span class="line"></span><br><span class="line">-X EXCLUDECOL DBMS database table column(s) to not enumerate</span><br><span class="line">## 要不进行枚举的数据库列</span><br><span class="line"></span><br><span class="line">-U USER DBMS user to enumerate</span><br><span class="line">## 用来进行枚举的数据库用户</span><br><span class="line"></span><br><span class="line">--exclude-sysdbs Exclude DBMS system databases when enumerating tables</span><br><span class="line">##  枚举表时排除系统数据库</span><br><span class="line"></span><br><span class="line">--pivot-column=P.. Pivot column name</span><br><span class="line">## 主列名称</span><br><span class="line"></span><br><span class="line">--where=DUMPWHERE Use WHERE condition while table dumping</span><br><span class="line">## 使用WHERE条件进行表转储</span><br><span class="line"></span><br><span class="line">--start=LIMITSTART First query output entry to retrieve</span><br><span class="line">##  第一个查询输出进入检索</span><br><span class="line"></span><br><span class="line">--stop=LIMITSTOP Last query output entry to retrieve</span><br><span class="line">## 最后查询的输出进入检索</span><br><span class="line"></span><br><span class="line">--first=FIRSTCHAR First query output word character to retrieve</span><br><span class="line">## 第一个查询输出字的字符检索</span><br><span class="line"></span><br><span class="line">--last=LASTCHAR Last query output word character to retrieve</span><br><span class="line">## 最后查询的输出字字符检索</span><br><span class="line"></span><br><span class="line">--sql-query=QUERY SQL statement to be executed</span><br><span class="line">## 要执行的SQL语句</span><br><span class="line"></span><br><span class="line">--sql-shell Prompt for an interactive SQL shell</span><br><span class="line">## 提示交互式SQL的shell</span><br><span class="line"></span><br><span class="line">--sql-file=SQLFILE Execute SQL statements from given file(s)</span><br><span class="line">## 从给定文件执行SQL语句</span><br></pre></td></tr></table></figure>
+
+<h3 id="10、Brute-Force（蛮力）"><a href="#10、Brute-Force（蛮力）" class="headerlink" title="10、Brute Force（蛮力）"></a>10、Brute Force（蛮力）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Brute force（蛮力）:</span><br><span class="line"></span><br><span class="line">These options can be used to run brute force checks</span><br><span class="line">## 这些选项可以被用来运行蛮力检查。</span><br><span class="line"></span><br><span class="line">--common-tables Check existence of common tables</span><br><span class="line">## 检查存在共同表</span><br><span class="line"></span><br><span class="line">--common-columns Check existence of common columns</span><br><span class="line">## 检查存在共同列</span><br></pre></td></tr></table></figure>
+
+<h3 id="11、User-defined-function-injection（用户自定义函数注入）"><a href="#11、User-defined-function-injection（用户自定义函数注入）" class="headerlink" title="11、User-defined function injection（用户自定义函数注入）"></a>11、User-defined function injection（用户自定义函数注入）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">User-defined function injection（用户自定义函数注入）:</span><br><span class="line"></span><br><span class="line">These options can be used to create custom user-defined functions</span><br><span class="line">## 这些选项可以用来创建用户自定义函数。</span><br><span class="line"></span><br><span class="line">--udf-inject Inject custom user-defined functions</span><br><span class="line">## 注入用户自定义函数</span><br><span class="line"></span><br><span class="line">--shared-lib=SHLIB Local path of the shared library</span><br><span class="line">## 共享库的本地路径</span><br></pre></td></tr></table></figure>
+
+<h3 id="12、File-system-access（访问文件系统）"><a href="#12、File-system-access（访问文件系统）" class="headerlink" title="12、File system access（访问文件系统）"></a>12、File system access（访问文件系统）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">File system access（访问文件系统）:</span><br><span class="line">These options can be used to access the back-end database management system underlying file system</span><br><span class="line">## 这些选项可以被用来访问后端数据库管理系统的底层文件系统。</span><br><span class="line"></span><br><span class="line">--file-read=RFILE Read a file from the back-end DBMS file system</span><br><span class="line">## 从后端的数据库管理系统文件系统读取文件</span><br><span class="line"></span><br><span class="line">--file-write=WFILE Write a local file on the back-end DBMS file system</span><br><span class="line">## 编辑后端的数据库管理系统文件系统上的本地文件</span><br><span class="line"></span><br><span class="line">--file-dest=DFILE Back-end DBMS absolute filepath to write to</span><br><span class="line">## 后端的数据库管理系统写入文件的绝对路径</span><br></pre></td></tr></table></figure>
+
+<h3 id="13、Operating-system-access（操作系统访问）"><a href="#13、Operating-system-access（操作系统访问）" class="headerlink" title="13、Operating system access（操作系统访问）"></a>13、Operating system access（操作系统访问）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Operating system access（操作系统访问）:</span><br><span class="line"></span><br><span class="line">These options can be used to access the back-end database management system underlying operating system</span><br><span class="line">## 这些选项可以用于访问后端数据库管理系统的底层操作系统。</span><br><span class="line"></span><br><span class="line">--os-cmd=OSCMD Execute an operating system command</span><br><span class="line">## 执行操作系统命令</span><br><span class="line"></span><br><span class="line">--os-shell Prompt for an interactive operating system shell</span><br><span class="line">##  交互式的操作系统的shell</span><br><span class="line"></span><br><span class="line">--os-pwn Prompt for an OOB shell, Meterpreter or VNC</span><br><span class="line">## 获取一个OOB shell，meterpreter或VNC</span><br><span class="line"></span><br><span class="line">--os-smbrelay One click prompt for an OOB shell, Meterpreter or VNC</span><br><span class="line">## 一键获取一个OOB shell，meterpreter或VNC</span><br><span class="line"></span><br><span class="line">--os-bof Stored procedure buffer overflow exploitation</span><br><span class="line">## 存储过程缓冲区溢出利用</span><br><span class="line"></span><br><span class="line">--priv-esc Database process user privilege escalation</span><br><span class="line">## 数据库进程用户权限提升</span><br><span class="line"></span><br><span class="line">--msf-path=MSFPATH Local path where Metasploit Framework is installed Metasploit Framework</span><br><span class="line">## 本地的安装路径</span><br><span class="line"></span><br><span class="line">--tmp-path=TMPPATH Remote absolute path of temporary files directory</span><br><span class="line">## 远程临时文件目录的绝对路径</span><br></pre></td></tr></table></figure>
+
+<h3 id="14、Windows-registry-access（Windows注册表访问）"><a href="#14、Windows-registry-access（Windows注册表访问）" class="headerlink" title="14、Windows registry access（Windows注册表访问）"></a>14、Windows registry access（Windows注册表访问）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Windows registry access（Windows注册表访问）:</span><br><span class="line"></span><br><span class="line">These options can be used to access the back-end database management system Windows registry</span><br><span class="line">## 这些选项可以被用来访问后端数据库管理系统Windows注册表。</span><br><span class="line"></span><br><span class="line">--reg-read Read a Windows registry key value</span><br><span class="line">## 读一个Windows注册表项值</span><br><span class="line"></span><br><span class="line">--reg-add Write a Windows registry key value data</span><br><span class="line">## 写一个Windows注册表项值数据</span><br><span class="line"></span><br><span class="line">--reg-del Delete a Windows registry key value</span><br><span class="line">## 删除Windows注册表键值</span><br><span class="line"></span><br><span class="line">--reg-key=REGKEY Windows registry key</span><br><span class="line">## Windows注册表键</span><br><span class="line"></span><br><span class="line">--reg-value=REGVAL Windows registry key value</span><br><span class="line">##  Windows注册表项值</span><br><span class="line"></span><br><span class="line">--reg-data=REGDATA Windows registry key value data</span><br><span class="line">## Windows注册表键值数据</span><br><span class="line"></span><br><span class="line">--reg-type=REGTYPE Windows registry key value type</span><br><span class="line">## Windows注册表项值类型</span><br></pre></td></tr></table></figure>
+
+<h3 id="15、General（一般）"><a href="#15、General（一般）" class="headerlink" title="15、General（一般）"></a>15、General（一般）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">General（一般）:</span><br><span class="line"></span><br><span class="line">These options can be used to set some general working parameters</span><br><span class="line">## 这些选项可以用来设置一些一般的工作参数。</span><br><span class="line"></span><br><span class="line">-s SESSIONFILE Load session from a stored (.sqlite) file</span><br><span class="line">## 保存和恢复检索会话文件的所有数据</span><br><span class="line"></span><br><span class="line">-t TRAFFICFILE Log all HTTP traffic into a textual file</span><br><span class="line">## 记录所有HTTP流量到一个文本文件中</span><br><span class="line"></span><br><span class="line">--batch Never ask for user input, use the default behaviour</span><br><span class="line">## 从不询问用户输入，使用所有默认配置。</span><br><span class="line"></span><br><span class="line">--binary-fields=.. Result fields having binary values (e.g. &quot;digest&quot;)</span><br><span class="line">## 具有二进制值的结果字段</span><br><span class="line"></span><br><span class="line">--charset=CHARSET Force character encoding used for data retrieval</span><br><span class="line">## 强制用于数据检索的字符编码</span><br><span class="line"></span><br><span class="line">--crawl=CRAWLDEPTH Crawl the website starting from the target URL</span><br><span class="line">## 从目标网址开始抓取网站</span><br><span class="line"></span><br><span class="line">--crawl-exclude=.. Regexp to exclude pages from crawling (e.g. &quot;logout&quot;)</span><br><span class="line">## 正则表达式排除网页抓取</span><br><span class="line"></span><br><span class="line">--csv-del=CSVDEL Delimiting character used in CSV output (default &quot;,&quot;)</span><br><span class="line">## 分隔CSV输出中使用的字符</span><br><span class="line"></span><br><span class="line">--dump-format=DU.. Format of dumped data (CSV (default), HTML or SQLITE)</span><br><span class="line">## 转储数据的格式</span><br><span class="line"></span><br><span class="line">--eta Display for each output the estimated time of arrival</span><br><span class="line">## 显示每个输出的预计到达时间</span><br><span class="line"></span><br><span class="line">--flush-session Flush session files for current target</span><br><span class="line">## 刷新当前目标的会话文件</span><br><span class="line"></span><br><span class="line">--forms Parse and test forms on target URL</span><br><span class="line">## 在目标网址上解析和测试表单</span><br><span class="line"></span><br><span class="line">--fresh-queries Ignore query results stored in session file</span><br><span class="line">## 忽略在会话文件中存储的查询结果</span><br><span class="line"></span><br><span class="line">--hex Use DBMS hex function(s) for data retrieval</span><br><span class="line">## 使用DBMS hex函数进行数据检索</span><br><span class="line"></span><br><span class="line">--output-dir=OUT.. Custom output directory path</span><br><span class="line">## 自定义输出目录路径</span><br><span class="line"></span><br><span class="line">--parse-errors Parse and display DBMS error messages from responses</span><br><span class="line">## 解析和显示响应中的DBMS错误消息</span><br><span class="line"></span><br><span class="line">--save=SAVECONFIG Save options to a configuration INI file</span><br><span class="line">## 保存选项到INI配置文件</span><br><span class="line"></span><br><span class="line">--scope=SCOPE Regexp to filter targets from provided proxy log</span><br><span class="line">## 使用正则表达式从提供的代理日志中过滤目标</span><br><span class="line"></span><br><span class="line">--test-filter=TE.. Select tests by payloads and/or titles (e.g. ROW)</span><br><span class="line">## 根据有效负载和/或标题(e.g. ROW)选择测试</span><br><span class="line"></span><br><span class="line">--test-skip=TEST.. Skip tests by payloads and/or titles (e.g. BENCHMARK)</span><br><span class="line">## 根据有效负载和/或标题跳过测试（e.g. BENCHMARK）</span><br><span class="line"></span><br><span class="line">--update Update sqlmap</span><br><span class="line">## 更新SqlMap</span><br></pre></td></tr></table></figure>
+
+<h3 id="16、Miscellaneous（杂项）"><a href="#16、Miscellaneous（杂项）" class="headerlink" title="16、Miscellaneous（杂项）"></a>16、Miscellaneous（杂项）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">Miscellaneous（杂项）:</span><br><span class="line"></span><br><span class="line">-z MNEMONICS Use short mnemonics (e.g. &quot;flu,bat,ban,tec=EU&quot;)</span><br><span class="line">## 使用简短的助记符</span><br><span class="line"></span><br><span class="line">--alert=ALERT Run host OS command(s) when SQL injection is found</span><br><span class="line">## 在找到SQL注入时运行主机操作系统命令</span><br><span class="line"></span><br><span class="line">--answers=ANSWERS Set question answers (e.g. &quot;quit=N,follow=N&quot;)</span><br><span class="line">## 设置问题答案</span><br><span class="line"></span><br><span class="line">--beep Beep on question and/or when SQL injection is found</span><br><span class="line">## 发现SQL 注入时提醒</span><br><span class="line"></span><br><span class="line">--cleanup Clean up the DBMS from sqlmap specific UDF and tables SqlMap</span><br><span class="line">## 具体的UDF和表清理DBMS</span><br><span class="line"></span><br><span class="line">--dependencies Check for missing (non-core) sqlmap dependencies</span><br><span class="line">## 检查是否缺少（非内核）sqlmap依赖关系</span><br><span class="line"></span><br><span class="line">--disable-coloring Disable console output coloring</span><br><span class="line">## 禁用控制台输出颜色</span><br><span class="line"></span><br><span class="line">--gpage=GOOGLEPAGE Use Google dork results from specified page number</span><br><span class="line">## 使用Google dork结果指定页码</span><br><span class="line"></span><br><span class="line">--identify-waf Make a thorough testing for a WAF/IPS/IDS protection</span><br><span class="line">## 对WAF / IPS / IDS保护进行全面测试</span><br><span class="line"></span><br><span class="line">--skip-waf Skip heuristic detection of WAF/IPS/IDS protection</span><br><span class="line">## 跳过启发式检测WAF / IPS / IDS保护</span><br><span class="line"></span><br><span class="line">--mobile Imitate smartphone through HTTP User-Agent header</span><br><span class="line">##  通过HTTP User-Agent标头模仿智能手机</span><br><span class="line"></span><br><span class="line">--offline Work in offline mode (only use session data)</span><br><span class="line">## 在离线模式下工作（仅使用会话数据）</span><br><span class="line"></span><br><span class="line">--page-rank Display page rank (PR) for Google dork results</span><br><span class="line">##  Google dork结果显示网页排名（PR）</span><br><span class="line"></span><br><span class="line">--purge-output Safely remove all content from output directory</span><br><span class="line">##  安全地从输出目录中删除所有内容</span><br><span class="line"></span><br><span class="line">--smart Conduct thorough tests only if positive heuristic(s)</span><br><span class="line">## 只有在正启发式时才进行彻底测试</span><br><span class="line"></span><br><span class="line">--sqlmap-shell Prompt for an interactive sqlmap shell</span><br><span class="line">## 提示交互式 sqlmap shell</span><br><span class="line"></span><br><span class="line">--wizard Simple wizard interface for beginner users</span><br><span class="line">## 给初级用户的简单向导界面</span><br></pre></td></tr></table></figure>
+
+<p align="right">--By  Micropoor </p>
+
+      
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+
+
+    /*引用块样式*/
+    
+
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,3139 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Linux 基础知识 | 纸条</title>
+  <meta name="keywords" content>
+  <meta name="description" content="Linux 基础知识 | 纸条">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="纸条-失败的理想主义者！">
+<meta name="keywords" content="Python,Python黑客,Python渗透工具">
+<meta property="og:type" content="website">
+<meta property="og:title" content="纸条">
+<meta property="og:url" content="http://autoing.github.io/categories/index.html">
+<meta property="og:site_name" content="纸条">
+<meta property="og:description" content="纸条-失败的理想主义者！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-22T04:15:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纸条">
+<meta name="twitter:description" content="纸条-失败的理想主义者！">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>纸条</span>
+</div>
+
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small> (206)</small></div></li>
+    
+        
+            
+            <li><div data-rel="Micro8">Micro8<small> (100)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="代码审计">代码审计<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Git">Git<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Linux">Linux<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="渗透测试">渗透测试<small> (15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="PHP编程">PHP编程<small> (9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Python">Python<small> (46)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="回收站">回收站<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="原创工具">原创工具<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Windows">Windows<small> (6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞库">漏洞库<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="https://github.com/autoing">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="206">
+<input type="hidden" id="yelog_site_word_count" value="346.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="原创工具 "
+           href="/article/tool-url-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 资产发现小脚本">Python 资产发现小脚本</span>
+            <span class="post-date" title="2019-09-24 23:24:36">2019/09/24</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/100_HTTP隧道reDuh第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="100、HTTP隧道reDuh第四季">100、HTTP隧道reDuh第四季</span>
+            <span class="post-date" title="2019-09-21 19:07:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/99_HTTP隧道Tunna第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="99、HTTP隧道Tunna第三季">99、HTTP隧道Tunna第三季</span>
+            <span class="post-date" title="2019-09-21 19:07:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/98_HTTP隧道reGeorg第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="98、HTTP隧道reGeorg第二季">98、HTTP隧道reGeorg第二季</span>
+            <span class="post-date" title="2019-09-21 19:07:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/97_MSF配置自定义Payload控制目标主机权限.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="97、MSF配置自定义Payload控制目标主机权限">97、MSF配置自定义Payload控制目标主机权限</span>
+            <span class="post-date" title="2019-09-21 19:07:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/96_HTTP隧道ABPTTS第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="96、HTTP隧道ABPTTS第一季">96、HTTP隧道ABPTTS第一季</span>
+            <span class="post-date" title="2019-09-21 19:07:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/95_基于Portfwd端口转发.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="95、基于Portfwd端口转发">95、基于Portfwd端口转发</span>
+            <span class="post-date" title="2019-09-21 19:07:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/94_基于实战中的small-payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="94、基于实战中的small-payload">94、基于实战中的small-payload</span>
+            <span class="post-date" title="2019-09-21 19:07:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/93_与CrackMapExec结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="93、与CrackMapExec结合攻击">93、与CrackMapExec结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:07:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/92_实战中的Payload应用.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="92、实战中的Payload应用">92、实战中的Payload应用</span>
+            <span class="post-date" title="2019-09-21 19:07:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/91_从目标文件中做信息搜集第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="91、从目标文件中做信息搜集第一季">91、从目标文件中做信息搜集第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/90_基于白名单zipfldr.dll执行payload第十八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="90、基于白名单zipfldr.dll执行payload第十八季">90、基于白名单zipfldr.dll执行payload第十八季</span>
+            <span class="post-date" title="2019-09-21 19:06:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/89_基于白名单Url.dll执行payload第十七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="89、基于白名单Url.dll执行payload第十七季">89、基于白名单Url.dll执行payload第十七季</span>
+            <span class="post-date" title="2019-09-21 19:06:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/88_基于白名单Ftp.exe执行payload第十九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="88、基于白名单Ftp.exe执行payload第十九季">88、基于白名单Ftp.exe执行payload第十九季</span>
+            <span class="post-date" title="2019-09-21 19:06:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/87_基于白名单Cmstp.exe执行payload第十六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="87、基于白名单Cmstp.exe执行payload第十六季">87、基于白名单Cmstp.exe执行payload第十六季</span>
+            <span class="post-date" title="2019-09-21 19:06:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/86_基于白名单Msiexec执行payload第八季补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="86、基于白名单Msiexec执行payload第八季补充">86、基于白名单Msiexec执行payload第八季补充</span>
+            <span class="post-date" title="2019-09-21 19:06:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/85_基于白名单Pcalua执行payload第十五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="85、基于白名单Pcalua执行payload第十五季">85、基于白名单Pcalua执行payload第十五季</span>
+            <span class="post-date" title="2019-09-21 19:06:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/84_基于白名单Forfiles执行payload第十四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="84、基于白名单Forfiles执行payload第十四季">84、基于白名单Forfiles执行payload第十四季</span>
+            <span class="post-date" title="2019-09-21 19:06:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/83_基于白名单PsExec执行payload第十三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="83、基于白名单PsExec执行payload第十三季">83、基于白名单PsExec执行payload第十三季</span>
+            <span class="post-date" title="2019-09-21 19:06:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/82_基于白名单Odbcconf执行payload第十二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="82、基于白名单Odbcconf执行payload第十二季">82、基于白名单Odbcconf执行payload第十二季</span>
+            <span class="post-date" title="2019-09-21 19:06:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/81_基于白名单Rundll32.exe执行payload第十一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="81、基于白名单Rundll32.exe执行payload第十一季">81、基于白名单Rundll32.exe执行payload第十一季</span>
+            <span class="post-date" title="2019-09-21 19:06:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/80_基于白名单Wmic执行payload第十季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="80、基于白名单Wmic执行payload第十季">80、基于白名单Wmic执行payload第十季</span>
+            <span class="post-date" title="2019-09-21 19:06:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/79_基于白名单Regsvr32执行payload第九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="79、基于白名单Regsvr32执行payload第九季">79、基于白名单Regsvr32执行payload第九季</span>
+            <span class="post-date" title="2019-09-21 19:06:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/78_基于白名单Msiexec执行payload第八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="78、基于白名单Msiexec执行payload第八季">78、基于白名单Msiexec执行payload第八季</span>
+            <span class="post-date" title="2019-09-21 19:06:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/77_基于白名单Csc.exe执行payload第七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="77、基于白名单Csc.exe执行payload第七季">77、基于白名单Csc.exe执行payload第七季</span>
+            <span class="post-date" title="2019-09-21 19:06:26">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/76_基于白名单Compiler.exe执行payload第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="76、基于白名单Compiler.exe执行payload第六季">76、基于白名单Compiler.exe执行payload第六季</span>
+            <span class="post-date" title="2019-09-21 19:06:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/75_基于白名单Mshta.exe执行payload第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="75、基于白名单Mshta.exe执行payload第五季">75、基于白名单Mshta.exe执行payload第五季</span>
+            <span class="post-date" title="2019-09-21 19:06:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/74_基于白名单regsvcs.exe执行payload第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="74、基于白名单regsvcs.exe执行payload第四季">74、基于白名单regsvcs.exe执行payload第四季</span>
+            <span class="post-date" title="2019-09-21 19:06:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/73_基于白名单Regasm.exe执行payload第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="73、基于白名单Regasm.exe执行payload第三季">73、基于白名单Regasm.exe执行payload第三季</span>
+            <span class="post-date" title="2019-09-21 19:06:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/72_基于白名单Installutil.exe执行payload第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="72、基于白名单Installutil.exe执行payload第二季">72、基于白名单Installutil.exe执行payload第二季</span>
+            <span class="post-date" title="2019-09-21 19:06:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/71_基于白名单Msbuild.exe执行payload第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="71、基于白名单Msbuild.exe执行payload第一季">71、基于白名单Msbuild.exe执行payload第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/70_ftp一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="70、ftp一句话下载payload补充">70、ftp一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:06:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/69_渗透-持续渗透-后渗透的本质.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="69、渗透-持续渗透-后渗透的本质">69、渗透-持续渗透-后渗透的本质</span>
+            <span class="post-date" title="2019-09-21 19:06:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/68_基于Ruby内存加载shellcode第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="68、基于Ruby内存加载shellcode第一季">68、基于Ruby内存加载shellcode第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/67_meterpreter下的irb操作第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="67、meterpreter下的irb操作第一季">67、meterpreter下的irb操作第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/66_借助aspx对payload进行分离免杀.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="66、借助aspx对payload进行分离免杀">66、借助aspx对payload进行分离免杀</span>
+            <span class="post-date" title="2019-09-21 19:06:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/65_离线提取目标机hash补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="65、离线提取目标机hash补充">65、离线提取目标机hash补充</span>
+            <span class="post-date" title="2019-09-21 19:06:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/64_高级持续渗透-第八季demo便是远控.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="64、高级持续渗透-第八季demo便是远控">64、高级持续渗透-第八季demo便是远控</span>
+            <span class="post-date" title="2019-09-21 19:05:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/63_高级持续渗透-第七季demo的成长.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="63、高级持续渗透-第七季demo的成长">63、高级持续渗透-第七季demo的成长</span>
+            <span class="post-date" title="2019-09-21 19:05:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/62_高级持续渗透-第六季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="62、高级持续渗透-第六季关于后门">62、高级持续渗透-第六季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/61_高级持续渗透-第五季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="61、高级持续渗透-第五季关于后门">61、高级持续渗透-第五季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/60_高级持续渗透-第四季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="60、高级持续渗透-第四季关于后门">60、高级持续渗透-第四季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/59_高级持续渗透-第三季关于后门补充二.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="59、高级持续渗透-第三季关于后门补充二">59、高级持续渗透-第三季关于后门补充二</span>
+            <span class="post-date" title="2019-09-21 19:05:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/58_高级持续渗透-第二季关于后门补充一.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="58、高级持续渗透-第二季关于后门补充一">58、高级持续渗透-第二季关于后门补充一</span>
+            <span class="post-date" title="2019-09-21 19:05:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/57_高级持续渗透-第一季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="57、高级持续渗透-第一季关于后门">57、高级持续渗透-第一季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/56_离线提取目标机hash.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="56、离线提取目标机hash">56、离线提取目标机hash</span>
+            <span class="post-date" title="2019-09-21 19:05:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/55_与Smbmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="55、与Smbmap结合攻击">55、与Smbmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:05:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/54_基于Powershell做Socks4-5代理.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="54、基于Powershell做Socks4-5代理">54、基于Powershell做Socks4-5代理</span>
+            <span class="post-date" title="2019-09-21 19:05:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/53_内网渗透中的文件传输.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53、内网渗透中的文件传输">53、内网渗透中的文件传输</span>
+            <span class="post-date" title="2019-09-21 19:05:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/52_渗透的本质是信息搜集.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="52、渗透的本质是信息搜集">52、渗透的本质是信息搜集</span>
+            <span class="post-date" title="2019-09-21 19:05:32">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/51_项目回忆：体系的本质是知识点串联.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="51、项目回忆：体系的本质是知识点串联">51、项目回忆：体系的本质是知识点串联</span>
+            <span class="post-date" title="2019-09-21 19:05:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/50_基于SqlDataSourceEnumerator发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="50、基于SqlDataSourceEnumerator发现内网存活主机">50、基于SqlDataSourceEnumerator发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:05:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/49_关于Powershell对抗安全软件.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="49、关于Powershell对抗安全软件">49、关于Powershell对抗安全软件</span>
+            <span class="post-date" title="2019-09-21 19:05:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/48_payload分离免杀思路第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="48、payload分离免杀思路第二季">48、payload分离免杀思路第二季</span>
+            <span class="post-date" title="2019-09-21 19:05:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/47_payload分离免杀思路.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="47、payload分离免杀思路">47、payload分离免杀思路</span>
+            <span class="post-date" title="2019-09-21 19:05:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/46_powershell一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="46、powershell一句话下载payload">46、powershell一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/45_解决bat一句话下载payload黑窗.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="45、解决bat一句话下载payload黑窗">45、解决bat一句话下载payload黑窗</span>
+            <span class="post-date" title="2019-09-21 19:05:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/44_ertutil一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44、ertutil一句话下载payload补充">44、ertutil一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/43_js一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43、js一句话下载payload">43、js一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/42_攻击FTP服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="42、攻击FTP服务">42、攻击FTP服务</span>
+            <span class="post-date" title="2019-09-21 19:05:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/41_bitsadmin一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41、bitsadmin一句话下载payload">41、bitsadmin一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/40_ftp一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="40、ftp一句话下载payload">40、ftp一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/39_vbs一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39、vbs一句话下载payload补充">39、vbs一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/38_certutil一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="38、certutil一句话下载payload">38、certutil一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/37_vbs一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="37、vbs一句话下载payload">37、vbs一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:04:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/36_解决vps上ssh掉线.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="36、解决vps上ssh掉线">36、解决vps上ssh掉线</span>
+            <span class="post-date" title="2019-09-21 19:04:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/35_与Sqlmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="35、与Sqlmap结合攻击">35、与Sqlmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:04:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/34_攻击SqlServer服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="34、攻击SqlServer服务">34、攻击SqlServer服务</span>
+            <span class="post-date" title="2019-09-21 19:04:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/33_攻击Mysql服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="33、攻击Mysql服务">33、攻击Mysql服务</span>
+            <span class="post-date" title="2019-09-21 19:04:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/32_配置vps上的msf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="32、配置vps上的msf">32、配置vps上的msf</span>
+            <span class="post-date" title="2019-09-21 19:04:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/31_msf的前生今世.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="31、msf的前生今世">31、msf的前生今世</span>
+            <span class="post-date" title="2019-09-21 19:04:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/30_解决msfvenom命令自动补全.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="30、解决msfvenom命令自动补全">30、解决msfvenom命令自动补全</span>
+            <span class="post-date" title="2019-09-21 19:04:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/29_发现目标WEB程序敏感目录第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="29、发现目标WEB程序敏感目录第一季">29、发现目标WEB程序敏感目录第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/28_基于MSF发现内网存活主机第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="28、基于MSF发现内网存活主机第六季">28、基于MSF发现内网存活主机第六季</span>
+            <span class="post-date" title="2019-09-21 19:04:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/27_基于MSF发现内网存活主机第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="27、基于MSF发现内网存活主机第五季">27、基于MSF发现内网存活主机第五季</span>
+            <span class="post-date" title="2019-09-21 19:04:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/26_基于MSF发现内网存活主机第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26、基于MSF发现内网存活主机第四季">26、基于MSF发现内网存活主机第四季</span>
+            <span class="post-date" title="2019-09-21 19:04:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/25_基于MSF发现内网存活主机第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="25、基于MSF发现内网存活主机第三季">25、基于MSF发现内网存活主机第三季</span>
+            <span class="post-date" title="2019-09-21 19:04:31">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/24_基于MSF发现内网存活主机第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="24、基于MSF发现内网存活主机第二季">24、基于MSF发现内网存活主机第二季</span>
+            <span class="post-date" title="2019-09-21 19:04:29">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/23_基于MSF发现内网存活主机第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="23、基于MSF发现内网存活主机第一季">23、基于MSF发现内网存活主机第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:27">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/22_基于SMB发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="22、基于SMB发现内网存活主机">22、基于SMB发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:25">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/21_基于ICMP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="21、基于ICMP发现内网存活主机">21、基于ICMP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:23">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/20_基于snmp发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="20、基于snmp发现内网存活主机">20、基于snmp发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:21">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/19_基于netbios发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="19、基于netbios发现内网存活主机">19、基于netbios发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:17">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/18_红蓝对抗渗透测试3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="18、红蓝对抗渗透测试3">18、红蓝对抗渗透测试3</span>
+            <span class="post-date" title="2019-09-21 19:04:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/17_红蓝对抗渗透测试2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="17、红蓝对抗渗透测试2">17、红蓝对抗渗透测试2</span>
+            <span class="post-date" title="2019-09-21 19:04:13">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/16_红蓝对抗渗透测试1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="16、红蓝对抗渗透测试1">16、红蓝对抗渗透测试1</span>
+            <span class="post-date" title="2019-09-21 19:04:11">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/15_基于第十课补充payload2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="15、基于第十课补充payload2">15、基于第十课补充payload2</span>
+            <span class="post-date" title="2019-09-21 19:04:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/14_基于第十课补充payload1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="14、基于第十课补充payload1">14、基于第十课补充payload1</span>
+            <span class="post-date" title="2019-09-21 19:04:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/13_基于ARP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="13、基于ARP发现内网存活主机">13、基于ARP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/12_基于UDP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="12、基于UDP发现内网存活主机">12、基于UDP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/11_工具介绍Veil-Evasion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11、工具介绍Veil-Evasion">11、工具介绍Veil-Evasion</span>
+            <span class="post-date" title="2019-09-21 19:04:01">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/10_msfvenom常用生成payload命令.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10、msfvenom常用生成payload命令">10、msfvenom常用生成payload命令</span>
+            <span class="post-date" title="2019-09-21 19:03:59">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/9_工具介绍-the-backdoor-factory.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="9、工具介绍-the-backdoor-factory">9、工具介绍-the-backdoor-factory</span>
+            <span class="post-date" title="2019-09-21 19:03:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/8_模拟诉求任务攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="8、模拟诉求任务攻击">8、模拟诉求任务攻击</span>
+            <span class="post-date" title="2019-09-21 19:03:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/7_sqlServer常用操作远程桌面语句.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="7、sqlServer常用操作远程桌面语句">7、sqlServer常用操作远程桌面语句</span>
+            <span class="post-date" title="2019-09-21 19:03:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/6_反攻的一次溯源--项目实战3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="6、反攻的一次溯源--项目实战3">6、反攻的一次溯源--项目实战3</span>
+            <span class="post-date" title="2019-09-21 19:03:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/5_工具介绍-Sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="5、工具介绍-Sqlmap">5、工具介绍-Sqlmap</span>
+            <span class="post-date" title="2019-09-21 19:03:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/4_Asp代码审计--项目实战2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4、Asp代码审计--项目实战2">4、Asp代码审计--项目实战2</span>
+            <span class="post-date" title="2019-09-21 19:03:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/3_Delphi代码审计--项目实战1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3、Delphi代码审计--项目实战1">3、Delphi代码审计--项目实战1</span>
+            <span class="post-date" title="2019-09-21 19:03:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/2_Linux提权-依赖exp篇.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2、Linux提权-依赖exp篇">2、Linux提权-依赖exp篇</span>
+            <span class="post-date" title="2019-09-21 19:03:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/1_windows提权-快速查找exp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1、windows提权-快速查找exp">1、windows提权-快速查找exp</span>
+            <span class="post-date" title="2019-09-21 19:03:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-django.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Django">Python Django</span>
+            <span class="post-date" title="2019-08-12 22:33:15">2019/08/12</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dos-colour.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义DOS窗口输出颜色">Python 定义DOS窗口输出颜色</span>
+            <span class="post-date" title="2019-07-13 12:24:55">2019/07/13</span>
+        </a>
+        
+        <a  class="漏洞库 "
+           href="/article/vulnerability-library.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="漏洞库">漏洞库</span>
+            <span class="post-date" title="2019-06-23 05:22:26">2019/06/23</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-task.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)批量下任务工具">Python 绿盟远程安全评估系统(RSAS)批量下任务工具</span>
+            <span class="post-date" title="2019-05-30 21:30:36">2019/05/30</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-Intranet.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-内网">渗透测试-内网</span>
+            <span class="post-date" title="2019-04-07 17:09:44">2019/04/07</span>
+        </a>
+        
+        <a  class="Git "
+           href="/article/git.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2019-03-24 15:23:53">2019/03/24</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-ewebs.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-极通EWEBS应用虚拟化系统">代码审计-极通EWEBS应用虚拟化系统</span>
+            <span class="post-date" title="2019-03-16 13:58:07">2019/03/16</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dr.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写">代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写</span>
+            <span class="post-date" title="2019-02-28 09:41:29">2019/02/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件上传">代码审计-DVWA-文件上传</span>
+            <span class="post-date" title="2019-01-29 20:29:52">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-inclusion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件包含">代码审计-DVWA-文件包含</span>
+            <span class="post-date" title="2019-01-29 10:14:15">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-command-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-命令注入">代码审计-DVWA-命令注入</span>
+            <span class="post-date" title="2019-01-28 19:42:56">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-axublog.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-Axublog建站系统">代码审计-Axublog建站系统</span>
+            <span class="post-date" title="2019-01-28 09:41:29">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计">代码审计</span>
+            <span class="post-date" title="2019-01-27 15:40:29">2019/01/27</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ipsec.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows 利用IPSec对指定的源地址进行访问限制">Windows 利用IPSec对指定的源地址进行访问限制</span>
+            <span class="post-date" title="2019-01-26 00:48:23">2019/01/26</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-metasploit-framework.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-MetaSploit Framework">渗透测试-MetaSploit Framework</span>
+            <span class="post-date" title="2018-11-25 13:25:41">2018/11/25</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-Sqlmap">渗透测试-Sqlmap</span>
+            <span class="post-date" title="2018-11-24 21:56:51">2018/11/24</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-burpsuite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-BurpSuite">渗透测试-BurpSuite</span>
+            <span class="post-date" title="2018-11-22 21:10:32">2018/11/22</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-sqlite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python SQLite数据库操作">Python SQLite数据库操作</span>
+            <span class="post-date" title="2018-11-22 13:30:35">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-logic-flaw.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-逻辑漏洞">渗透测试-逻辑漏洞</span>
+            <span class="post-date" title="2018-11-22 10:01:10">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-info.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-信息收集">渗透测试-信息收集</span>
+            <span class="post-date" title="2018-11-21 21:33:27">2018/11/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-serialization.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-序列化与反序列化">渗透测试-序列化与反序列化</span>
+            <span class="post-date" title="2018-11-20 21:11:11">2018/11/20</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-code-command-execute.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-代码执行、命令执行">渗透测试-代码执行、命令执行</span>
+            <span class="post-date" title="2018-11-08 06:24:29">2018/11/08</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-Include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件包含、文件读取">渗透测试-文件包含、文件读取</span>
+            <span class="post-date" title="2018-11-07 06:31:06">2018/11/07</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件上传">渗透测试-文件上传</span>
+            <span class="post-date" title="2018-11-04 14:38:58">2018/11/04</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-webshell.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-webshell">渗透测试-webshell</span>
+            <span class="post-date" title="2018-10-16 20:57:13">2018/10/16</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-xss-cslf-csrf-xxe-ssrf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-XSS CSLF CSRF XXE SSRF">渗透测试-XSS CSLF CSRF XXE SSRF</span>
+            <span class="post-date" title="2018-10-13 23:55:34">2018/10/13</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-awvs-scan.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]">Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]</span>
+            <span class="post-date" title="2018-10-03 01:04:01">2018/10/03</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sql-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-SQL注入">渗透测试-SQL注入</span>
+            <span class="post-date" title="2018-09-23 13:09:07">2018/09/23</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-cookie-session.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-cookie与session">渗透测试-cookie与session</span>
+            <span class="post-date" title="2018-09-21 19:56:02">2018/09/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-test.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-测试">渗透测试-测试</span>
+            <span class="post-date" title="2018-09-20 20:58:15">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-object.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 面向对象">PHP 面向对象</span>
+            <span class="post-date" title="2018-09-20 20:19:21">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 操作MySQL">PHP 操作MySQL</span>
+            <span class="post-date" title="2018-09-20 07:38:17">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 文件包含">PHP 文件包含</span>
+            <span class="post-date" title="2018-09-17 13:06:43">2018/09/17</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL数据库操作">MySQL数据库操作</span>
+            <span class="post-date" title="2018-09-17 12:53:05">2018/09/17</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-get-post.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP GET、POST请求、三元运算符">PHP GET、POST请求、三元运算符</span>
+            <span class="post-date" title="2018-09-16 21:28:36">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-time-file.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 时间戳、系统变量、文件操作">PHP 时间戳、系统变量、文件操作</span>
+            <span class="post-date" title="2018-09-16 15:48:19">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-array.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数组">PHP 数组</span>
+            <span class="post-date" title="2018-09-16 00:52:50">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 函数">PHP 函数</span>
+            <span class="post-date" title="2018-09-15 23:04:27">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数据类型、对象、常量、循环">PHP 数据类型、对象、常量、循环</span>
+            <span class="post-date" title="2018-09-15 20:25:08">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 变量">PHP 变量</span>
+            <span class="post-date" title="2018-09-15 19:50:14">2018/09/15</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-scan-port-web.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 自动化漏洞扫描器">Python 自动化漏洞扫描器</span>
+            <span class="post-date" title="2018-09-08 17:36:25">2018/09/08</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-rsas-count.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS统计已经整改的漏洞数据">Python RSAS统计已经整改的漏洞数据</span>
+            <span class="post-date" title="2018-09-05 22:06:00">2018/09/05</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-add-leak.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS添加新增漏洞数据">Python RSAS添加新增漏洞数据</span>
+            <span class="post-date" title="2018-08-23 20:50:08">2018/08/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-excel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Excel操作">Python Excel操作</span>
+            <span class="post-date" title="2018-08-15 22:29:20">2018/08/15</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-pyqt5.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python PyQt5">Python PyQt5</span>
+            <span class="post-date" title="2018-08-11 16:04:01">2018/08/11</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-nmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python nmap">Python nmap</span>
+            <span class="post-date" title="2018-07-30 22:46:30">2018/07/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-requests.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python requests">Python requests</span>
+            <span class="post-date" title="2018-07-29 14:36:37">2018/07/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-urllib-request.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python urllib.request">Python urllib.request</span>
+            <span class="post-date" title="2018-07-28 20:09:28">2018/07/28</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-re.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 正则表达式">Python 正则表达式</span>
+            <span class="post-date" title="2018-07-26 20:27:28">2018/07/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-tcp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-TCP">Python Socket套接字-TCP</span>
+            <span class="post-date" title="2018-07-25 20:39:27">2018/07/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-udp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-UDP">Python Socket套接字-UDP</span>
+            <span class="post-date" title="2018-07-22 22:51:21">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-threading.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 多线程">Python 多线程</span>
+            <span class="post-date" title="2018-07-22 14:01:06">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-property.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 内建属性">Python 内建属性</span>
+            <span class="post-date" title="2018-07-21 08:59:26">2018/07/21</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-contrast.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 符合性评测表材料对比工具">Python 符合性评测表材料对比工具</span>
+            <span class="post-date" title="2018-07-19 22:22:45">2018/07/19</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-action-scope.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 动态语言">Python 动态语言</span>
+            <span class="post-date" title="2018-07-14 22:28:35">2018/07/14</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-decorators.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 装饰器">Python 装饰器</span>
+            <span class="post-date" title="2018-07-10 21:25:51">2018/07/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-closure.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 闭包">Python 闭包</span>
+            <span class="post-date" title="2018-07-10 20:55:01">2018/07/10</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-xml-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基线脚本批量重命名">Python 基线脚本批量重命名</span>
+            <span class="post-date" title="2018-07-06 10:54:26">2018/07/06</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 生成器、迭代器">Python 生成器、迭代器</span>
+            <span class="post-date" title="2018-06-26 20:17:01">2018/06/26</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-tel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 用户名穷举">Python 用户名穷举</span>
+            <span class="post-date" title="2018-06-23 23:24:26">2018/06/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-tkinter.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python TKinter">Python TKinter</span>
+            <span class="post-date" title="2018-06-10 13:42:41">2018/06/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-import-module.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 模块导入、深拷贝、浅拷贝、私有化">Python 模块导入、深拷贝、浅拷贝、私有化</span>
+            <span class="post-date" title="2018-06-07 20:57:28">2018/06/07</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input-folder-name.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取目录下的指定文件名">Python 获取目录下的指定文件名</span>
+            <span class="post-date" title="2018-05-05 21:48:56">2018/05/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-zipfile.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python zipfile无需解压直接读取zip中的文件内容">Python zipfile无需解压直接读取zip中的文件内容</span>
+            <span class="post-date" title="2018-05-05 21:21:13">2018/05/05</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-tool.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具">Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具</span>
+            <span class="post-date" title="2018-04-25 23:04:01">2018/04/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-plane.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 打飞机">Python 打飞机</span>
+            <span class="post-date" title="2018-04-24 21:57:15">2018/04/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application-save.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 名片管理保存到文件中">Python 名片管理保存到文件中</span>
+            <span class="post-date" title="2018-04-20 23:27:28">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-argv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 给程序传参">Python 给程序传参</span>
+            <span class="post-date" title="2018-04-20 21:26:34">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-exception.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 异常处理">Python 异常处理</span>
+            <span class="post-date" title="2018-04-05 23:12:09">2018/04/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-in-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象实现对象插对象">Python 面对对象实现对象插对象</span>
+            <span class="post-date" title="2018-04-01 10:35:51">2018/04/01</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象烤地鼠">Python 面对对象烤地鼠</span>
+            <span class="post-date" title="2018-03-31 23:10:41">2018/03/31</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象">Python 面对对象</span>
+            <span class="post-date" title="2018-03-30 23:32:28">2018/03/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-batch-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量重命名">Python 批量重命名</span>
+            <span class="post-date" title="2018-03-29 22:40:03">2018/03/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-write-copy-cate.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件写入复制重命名">Python 文件写入复制重命名</span>
+            <span class="post-date" title="2018-03-27 23:24:34">2018/03/27</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-file-processing.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件的操作">Python 文件的操作</span>
+            <span class="post-date" title="2018-03-26 23:10:34">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-value-exchange.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 两个值交换">Python 两个值交换</span>
+            <span class="post-date" title="2018-03-26 22:31:53">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-anonymous-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 匿名函数">Python 匿名函数</span>
+            <span class="post-date" title="2018-03-26 20:27:28">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-recursion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 递归">Python 递归</span>
+            <span class="post-date" title="2018-03-25 23:09:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 数据类型">Python 数据类型</span>
+            <span class="post-date" title="2018-03-25 22:24:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 函数改进名片管理">Python 函数改进名片管理</span>
+            <span class="post-date" title="2018-03-25 11:48:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义函数">Python 定义函数</span>
+            <span class="post-date" title="2018-03-25 09:01:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典列表嵌套加标记实现名片管理">Python 字典列表嵌套加标记实现名片管理</span>
+            <span class="post-date" title="2018-03-24 11:20:28">2018/03/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典">Python 字典</span>
+            <span class="post-date" title="2018-03-24 10:53:28">2018/03/24</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-get-links.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取网页所有超链接">Python 获取网页所有超链接</span>
+            <span class="post-date" title="2018-03-21 20:39:45">2018/03/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表实现名字管理">Python 列表实现名字管理</span>
+            <span class="post-date" title="2018-03-18 17:48:45">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-string.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字符串">Python 字符串</span>
+            <span class="post-date" title="2018-03-18 15:33:58">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表">Python 列表</span>
+            <span class="post-date" title="2018-03-18 14:53:28">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-while.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python while">Python while</span>
+            <span class="post-date" title="2018-03-17 20:17:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-if-esle.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python if else">Python if else</span>
+            <span class="post-date" title="2018-03-17 18:02:27">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python input %s 传参">Python input %s 传参</span>
+            <span class="post-date" title="2018-03-17 17:56:21">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义变量">Python 定义变量</span>
+            <span class="post-date" title="2018-03-17 17:50:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-basics.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基础">Python 基础</span>
+            <span class="post-date" title="2018-03-17 17:34:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-command.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础命令">Linux 基础命令</span>
+            <span class="post-date" title="2018-03-15 22:17:28">2018/03/15</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-first.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础知识">Linux 基础知识</span>
+            <span class="post-date" title="2018-03-11 14:41:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-what-socket.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="什么是socket">什么是socket</span>
+            <span class="post-date" title="2018-03-11 12:00:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-mask-calculation.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="子网掩码的计算">子网掩码的计算</span>
+            <span class="post-date" title="2018-03-10 16:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-osi-model.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSI七层模型详解">OSI七层模型详解</span>
+            <span class="post-date" title="2018-03-10 01:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-the-code.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="原码补码反码">原码补码反码</span>
+            <span class="post-date" title="2018-03-10 00:04:58">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-hex-convert.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="进制之间的转换">进制之间的转换</span>
+            <span class="post-date" title="2018-03-09 20:34:28">2018/03/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-metasploit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装Metasploit">Windows10 Ubuntu子系统下安装Metasploit</span>
+            <span class="post-date" title="2018-02-18 22:04:56">2018/02/18</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-install-ubuntu.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统初始配置">Windows10 Ubuntu子系统初始配置</span>
+            <span class="post-date" title="2018-02-17 13:21:23">2018/02/17</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-opencv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置OpenCV图像处理">Windows10 Ubuntu子系统配置OpenCV图像处理</span>
+            <span class="post-date" title="2018-02-10 15:45:23">2018/02/10</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-linux-ssh.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置SSH服务">Windows10 Ubuntu子系统配置SSH服务</span>
+            <span class="post-date" title="2018-02-09 16:04:10">2018/02/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装MySQL">Windows10 Ubuntu子系统下安装MySQL</span>
+            <span class="post-date" title="2018-01-28 11:40:01">2018/01/28</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-site-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量检测网站存活（多线程）">Python 批量检测网站存活（多线程）</span>
+            <span class="post-date" title="2017-10-29 15:47:00">2017/10/29</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-linux-first" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Linux 基础知识</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Linux">Linux</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-03-11 14:41:35'>2018-03-11 14:41</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#终端切换"><span class="toc-text">终端切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令格式"><span class="toc-text">命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录"><span class="toc-text">文件目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户、群组、权限"><span class="toc-text">用户、群组、权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件权限"><span class="toc-text">文件权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩解压缩"><span class="toc-text">压缩解压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备份系统"><span class="toc-text">备份系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VI编辑器"><span class="toc-text">VI编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动流程"><span class="toc-text">启动流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭重启系统"><span class="toc-text">关闭重启系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统监控"><span class="toc-text">系统监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GRUP加密"><span class="toc-text">GRUP加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BIOS加密"><span class="toc-text">BIOS加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程管理"><span class="toc-text">进程管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬盘分区"><span class="toc-text">硬盘分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-text">文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软连接硬链接"><span class="toc-text">软连接硬链接</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="终端切换"><a href="#终端切换" class="headerlink" title="终端切换"></a>终端切换</h3><p>切换虚拟终端的方法：Ctrl+Alt+F[1～6]，如想切换到第二号虚拟终端，则同时按Ctrl+Alt+F2<br>普通用户登录后系统的提示符：$<br>root用户登录后系统的提示符：#</p>
+<h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><p>命令 【选项】 【参数】</p>
+<ul>
+<li>掌握命令格式中命令、选项、参数的具体含义</li>
+<li>命令：告诉Linux（UNIX）操作系统做（执行）什么。</li>
+<li>选项：说明命令运行的方式（可以改变命令的功能）。选项部分是以“-”字符开始的。</li>
+<li>参数：说明命令影响（操作）的是什么（如一个文件、一个目录或是一段正文文字）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">init 0</td>
+<td align="left">关机</td>
+</tr>
+<tr>
+<td align="left">power off</td>
+<td align="left">关机</td>
+</tr>
+<tr>
+<td align="left">reboot</td>
+<td align="left">重启</td>
+</tr>
+<tr>
+<td align="left">ls -l</td>
+<td align="left">更详细的查看当前目录下的文件</td>
+</tr>
+<tr>
+<td align="left">ls -a</td>
+<td align="left">显示隐藏文件</td>
+</tr>
+<tr>
+<td align="left">ls -l /boot</td>
+<td align="left">查看系统目录下的文件</td>
+</tr>
+<tr>
+<td align="left">whoami</td>
+<td align="left">查看目前登录的用户</td>
+</tr>
+<tr>
+<td align="left">who</td>
+<td align="left">列出目前哪些用户在系统上工作</td>
+</tr>
+<tr>
+<td align="left">date</td>
+<td align="left">查看系统时间</td>
+</tr>
+<tr>
+<td align="left">date 030914522018</td>
+<td align="left">设置时间：2018-3-11 14:52</td>
+</tr>
+<tr>
+<td align="left">cal</td>
+<td align="left">查看日历</td>
+</tr>
+<tr>
+<td align="left">cal 7 2018</td>
+<td align="left">查看2018年7月份日历</td>
+</tr>
+<tr>
+<td align="left">clear</td>
+<td align="left">清屏</td>
+</tr>
+<tr>
+<td align="left">hwclock –s</td>
+<td align="left">同步硬件时间</td>
+</tr>
+<tr>
+<td align="left">hwclock –w</td>
+<td align="left">同步系统时间</td>
+</tr>
+<tr>
+<td align="left">useradd webing</td>
+<td align="left">新建webing用户</td>
+</tr>
+<tr>
+<td align="left">useradel -r webing</td>
+<td align="left">删除webing用户</td>
+</tr>
+<tr>
+<td align="left">groupadd webing</td>
+<td align="left">新建webing组</td>
+</tr>
+<tr>
+<td align="left">groupdel webing</td>
+<td align="left">删除webing组</td>
+</tr>
+<tr>
+<td align="left">passwd webing</td>
+<td align="left">修改webing用户密码</td>
+</tr>
+<tr>
+<td align="left">su - webing</td>
+<td align="left">切换到webing用户</td>
+</tr>
+<tr>
+<td align="left">man su</td>
+<td align="left">查看su使用说明</td>
+</tr>
+<tr>
+<td align="left">su –help</td>
+<td align="left">查看su命令使用帮助</td>
+</tr>
+<tr>
+<td align="left">pwd</td>
+<td align="left">显示当前目录</td>
+</tr>
+<tr>
+<td align="left">cd ..</td>
+<td align="left">返回上级目录</td>
+</tr>
+<tr>
+<td align="left">cd -</td>
+<td align="left">返回上次所在目录</td>
+</tr>
+<tr>
+<td align="left">cd</td>
+<td align="left">返回家目录</td>
+</tr>
+<tr>
+<td align="left">cp -r / /home/</td>
+<td align="left">递归复制根目录下所有文件到home目录</td>
+</tr>
+<tr>
+<td align="left">mv /etc /home/</td>
+<td align="left">移动etc目录下所有文件到home目录</td>
+</tr>
+<tr>
+<td align="left">mv 1.txt 2.txt</td>
+<td align="left">改名</td>
+</tr>
+<tr>
+<td align="left">mkdir -p /1/2</td>
+<td align="left">递归创建目录</td>
+</tr>
+<tr>
+<td align="left">touch 1.txt</td>
+<td align="left">创建文件</td>
+</tr>
+<tr>
+<td align="left">head -1 1.txt</td>
+<td align="left">查看文件第一行，默认10行</td>
+</tr>
+<tr>
+<td align="left">tail -1 1.txt</td>
+<td align="left">查看文件倒数第一行，默认10行</td>
+</tr>
+<tr>
+<td align="left">tail -f 1.txt</td>
+<td align="left">动态查看文件增加减少</td>
+</tr>
+<tr>
+<td align="left">alias cp</td>
+<td align="left">查看cp命令别名</td>
+</tr>
+<tr>
+<td align="left">alias webing=’ls’</td>
+<td align="left">创建webing命令别名</td>
+</tr>
+<tr>
+<td align="left">unalias webing</td>
+<td align="left">删除webing命令别名</td>
+</tr>
+<tr>
+<td align="left">id root</td>
+<td align="left">查看用户ID</td>
+</tr>
+<tr>
+<td align="left">wc -l /etc/passwd</td>
+<td align="left">统计文件有多少行</td>
+</tr>
+</tbody></table>
+<h3 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h3><table>
+<thead>
+<tr>
+<th align="left">目录名</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bin</td>
+<td align="left">用来存放常用的可执行文件</td>
+</tr>
+<tr>
+<td align="left">sbin</td>
+<td align="left">用来存放系统的可执行文件</td>
+</tr>
+<tr>
+<td align="left">boot</td>
+<td align="left">开机与内核文件</td>
+</tr>
+<tr>
+<td align="left">dev</td>
+<td align="left">设备文件目录</td>
+</tr>
+<tr>
+<td align="left">etc</td>
+<td align="left">配置文件目录</td>
+</tr>
+<tr>
+<td align="left">home</td>
+<td align="left">用来存放用户自己的文件或目录</td>
+</tr>
+<tr>
+<td align="left">init</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">lib</td>
+<td align="left">系统使用的函数库的目录</td>
+</tr>
+<tr>
+<td align="left">lib64</td>
+<td align="left">系统使用的函数库的目录</td>
+</tr>
+<tr>
+<td align="left">media</td>
+<td align="left">挂载目录，通常可移除式硬件会被挂载在该目录下</td>
+</tr>
+<tr>
+<td align="left">mnt</td>
+<td align="left">挂载目录</td>
+</tr>
+<tr>
+<td align="left">opt</td>
+<td align="left">第三方软件安装目录</td>
+</tr>
+<tr>
+<td align="left">proc</td>
+<td align="left">进程信息及内核信息（cpu内存）存放在这里</td>
+</tr>
+<tr>
+<td align="left">root</td>
+<td align="left">系统管理员root的家目录</td>
+</tr>
+<tr>
+<td align="left">run</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">snap</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">srv</td>
+<td align="left">网络服务启动后，服务所需要取用的数据目录</td>
+</tr>
+<tr>
+<td align="left">sys</td>
+<td align="left">一个虚拟的档案系统，主要记录与核心相关的资讯</td>
+</tr>
+<tr>
+<td align="left">tmp</td>
+<td align="left">临时文件目录</td>
+</tr>
+<tr>
+<td align="left">usr</td>
+<td align="left">应用程序存放目录</td>
+</tr>
+<tr>
+<td align="left">var</td>
+<td align="left">系统执行过程中经常变化的文件</td>
+</tr>
+</tbody></table>
+<h3 id="用户、群组、权限"><a href="#用户、群组、权限" class="headerlink" title="用户、群组、权限"></a>用户、群组、权限</h3><p>useradd -u 555 -g root -d /home/web -c rootweb -s /bin/bash web<br>创建用户 指定uid 用户组 家目录 描述信息 登录系统 用户名</p>
+<p><strong>cat /etc/passwd</strong><br><strong>root:x:0:0:root:/root:/bin/bash</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">root</th>
+<th align="left">x</th>
+<th align="left">0</th>
+<th align="left">0</th>
+<th align="left">root</th>
+<th align="left">/root</th>
+<th align="left">/bin/bash</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">用户名</td>
+<td align="left">密码占位符</td>
+<td align="left">user id，0代表root</td>
+<td align="left">group id</td>
+<td align="left">用户描述信息</td>
+<td align="left">家目录</td>
+<td align="left">允许登录操作系统的可执行文件</td>
+</tr>
+</tbody></table>
+<p><strong>cat /etc/group</strong><br><strong>root:x:0:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">root</th>
+<th align="left">x</th>
+<th align="left">0</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">组名</td>
+<td align="left">组密码占位符</td>
+<td align="left">组ID</td>
+<td align="left">组内用户列表</td>
+</tr>
+</tbody></table>
+<p>usermod命令的常用选项：<br>–u：修改用户的UID<br>–g：修改用户的GID<br>–G：将一个用户加入到指定的群组中<br>–d：修改用户的家目录<br>–c：修改用户的备注信息<br>–s：修改用户所用的shell</p>
+<p>usermod命令的举例：<br>修改babydog4用户的家目录为/home/babies的命令：</p>
+<p>usermod –d /home/babies babydog4</p>
+<p>将babydog4这个用户添加到babydog6这个群组中的命令：</p>
+<p>usermod –G babydog6 babydog4</p>
+<p>将babydog4这个用户的的gid变更为dog群组的命令：</p>
+<p>usermod –g dog babydog4</p>
+<p>修改文件的组：<br>chown root group /etc/passwd</p>
+<h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><p><strong>ls -l</strong><br><strong>drwxrwxrwx 0 root root 512 Mar 11 18:14 test</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">drwxrwxrwx</th>
+<th align="left">0</th>
+<th align="left">root</th>
+<th align="left">root</th>
+<th align="left">512</th>
+<th align="left">Mar 11 18:14</th>
+<th align="left">test</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">权限信息共10位</td>
+<td align="left">硬链接数</td>
+<td align="left">属主</td>
+<td align="left">属组</td>
+<td align="left">文件大小</td>
+<td align="left">文件创建信息</td>
+<td align="left">文件名</td>
+</tr>
+</tbody></table>
+<p>=====================================================</p>
+<table>
+<thead>
+<tr>
+<th align="left">drwxrwxrwx</th>
+<th align="left">r 读 4</th>
+<th align="left">w 写 2</th>
+<th align="left">x 执行 1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">d</td>
+<td align="left">rwx</td>
+<td align="left">rwx</td>
+<td align="left">rwx</td>
+</tr>
+<tr>
+<td align="left">文件类型,-普通文件 d目录 l软连接 b设备文件 P管道文件</td>
+<td align="left">属主权限 u</td>
+<td align="left">属组权限 g</td>
+<td align="left">其他用户 o</td>
+</tr>
+<tr>
+<td align="left">chmod u -rw test</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">chmod g -rw test</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">chmod o -rw test</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="压缩解压缩"><a href="#压缩解压缩" class="headerlink" title="压缩解压缩"></a>压缩解压缩</h3><p>tar</p>
+<p>-c: 建立压缩档案<br>-x：解压<br>-t：查看内容<br>-r：向压缩归档文件末尾追加文件<br>-u：更新原压缩包中的文件</p>
+<p>这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。</p>
+<p>-z：有gzip属性的<br>-j：有bz2属性的<br>-Z：有compress属性的<br>-v：显示所有过程<br>-O：将文件解开到标准输出</p>
+<p>下面的参数-f是必须的</p>
+<p>-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。</p>
+<p>tar -cf all.tar *.jpg<br>这条命令是将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。</p>
+<p>tar -rf all.tar *.gif<br>这条命令是将所有.gif的文件增加到all.tar的包里面去。-r是表示增加文件的意思。</p>
+<p>tar -uf all.tar logo.gif<br>这条命令是更新原来tar包all.tar中logo.gif文件，-u是表示更新文件的意思。</p>
+<p>tar -tf all.tar<br>这条命令是列出all.tar包中所有文件，-t是列出文件的意思</p>
+<p>tar -xf all.tar<br>这条命令是解出all.tar包中所有文件，-t是解开的意思</p>
+<p>压缩</p>
+<p>tar -cvf jpg.tar *.jpg //将目录里所有jpg文件打包成tar.jpg </p>
+<p>tar -czf jpg.tar.gz *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz</p>
+<p>tar -cjf jpg.tar.bz2 *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用bzip2压缩，生成一个bzip2压缩过的包，命名为jpg.tar.bz2</p>
+<p>tar -cZf jpg.tar.Z *.jpg   //将目录里所有jpg文件打包成jpg.tar后，并且将其用compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</p>
+<p>rar a jpg.rar *.jpg //rar格式的压缩，需要先下载rar for linux</p>
+<p>zip jpg.zip *.jpg //zip格式的压缩，需要先下载zip for linux</p>
+<p>解压</p>
+<p>tar -xvf file.tar //解压 tar包</p>
+<p>tar -xzvf file.tar.gz //解压tar.gz</p>
+<p>tar -xjvf file.tar.bz2   //解压 tar.bz2</p>
+<p>tar -xZvf file.tar.Z   //解压tar.Z</p>
+<p>unrar e file.rar //解压rar</p>
+<p>unzip file.zip //解压zip</p>
+<p>总结</p>
+<p>1、*.tar 用 tar -xvf 解压</p>
+<p>2、*.gz 用 gzip -d或者gunzip 解压</p>
+<p>3、*.tar.gz和*.tgz 用 tar -xzf 解压</p>
+<p>4、*.bz2 用 bzip2 -d或者用bunzip2 解压</p>
+<p>5、*.tar.bz2用tar -xjf 解压</p>
+<p>6、*.Z 用 uncompress 解压</p>
+<p>7、*.tar.Z 用tar -xZf 解压</p>
+<p>8、*.rar 用 unrar e解压</p>
+<p>9、*.zip 用 unzip 解压</p>
+<h3 id="备份系统"><a href="#备份系统" class="headerlink" title="备份系统"></a>备份系统</h3><p>tar -cvpzf /media/disk/backup.tgz / –exclude=/proc</p>
+<p>恢复备份：<br>tar -xvpzf backup.tgz -C /</p>
+<h3 id="VI编辑器"><a href="#VI编辑器" class="headerlink" title="VI编辑器"></a>VI编辑器</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a</td>
+<td align="left">进入插入模式并在光标之后进行添加</td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td align="left">进入插入模式并在光标之前进行插入</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="left">进入插入模式并在当前（光标所在）行之下开启新的一行</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="left">删除光标所在行</td>
+</tr>
+<tr>
+<td align="center">ndd</td>
+<td align="left">n为数字，删除光标所在的向下n行</td>
+</tr>
+<tr>
+<td align="center">yy</td>
+<td align="left">复制光标所在行</td>
+</tr>
+<tr>
+<td align="center">nyy</td>
+<td align="left">n为数字，复制光标所在的向下n行</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="left">将已复制的数据在光标下一行粘贴</td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td align="left">将已复制的数据在光标上一行粘贴</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="left">撤销上一步操作</td>
+</tr>
+<tr>
+<td align="center">ctrl+r</td>
+<td align="left">还原上一步操作</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="left">跳到行尾</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="left">跳到首部</td>
+</tr>
+<tr>
+<td align="center">ctrl+a</td>
+<td align="left">命令模式下跳到首部</td>
+</tr>
+<tr>
+<td align="center">ctrl+e</td>
+<td align="left">命令模式下跳到行尾</td>
+</tr>
+<tr>
+<td align="center">gg</td>
+<td align="left">跳到首行</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="left">跳到尾行</td>
+</tr>
+<tr>
+<td align="center">nG</td>
+<td align="left">n为数字，跳到指定行</td>
+</tr>
+<tr>
+<td align="center">set nu</td>
+<td align="left">显示行数</td>
+</tr>
+</tbody></table>
+<h3 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h3><p><strong><em>Linux系统引导的顺序：</em></strong></p>
+<p>BIOS —&gt; MBR —&gt; boot loader —&gt; Kernel —&gt; init process —&gt; login</p>
+<p>BIOS的工作是检查计算机的硬件设备，如CPU、内存和风扇速度等.<br>BIOS（Basic Input/Output System）（基本输入/输出系统的缩写），它是硬件与软件之间的接口，而且是非常基本的接口。</p>
+<p>MBR会在启动盘的第1个块中，大小为512B。其中前446中的程序代码是用来选择boot partition（分区），也就是由哪个分区来装入开机用的代码。</p>
+<p>GRUB的定义：GRUB是Grand Unified Bootloader（多重操作系统启动管理器）的缩写。</p>
+<p><strong><em>启动流程：</em></strong><br>当我们打开计算机电源，计算机会自动从主板的BIOS(Basic Input/Output System)读取其中所存储的程序。这一程序通常知道一些直接连接在主板上的硬件(硬盘，网络接口，键盘，串口，并口)。现在大部分的BIOS允许你从软盘、光盘或者硬盘中选择一个来启动计算机。<br>下一步，计算机将从你所选择的存储设备中读取起始的512 bytes(比如光盘一开是的512 bytes，如果我们从光盘启动的话)。这512 bytes叫做主引导记录MBR (master boot record)。MBR会告诉电脑从该设备的某一个分区(partition)来装载引导加载程序(boot loader)。Boot loader储存有操作系统(OS)的相关信息，比如操作系统名称，操作系统内核 (kernel)所在位置等。常用的boot loader有GRUB和LILO。<br>随后，boot loader会帮助我们加载kernel。kernel实际上是一个用来操作计算机的程序，它是计算机操作系统的内核，主要的任务是管理计算机的硬件资源，充当软件和硬件的接口。操作系统上的任何操作都要通过kernel传达给硬件。Windows和Linux各自有自己kernel。狭义的操作系统就是指kernel，广义的操作系统包括kernel以及kernel之上的各种应用。</p>
+<p>446 bytes 引导信息<br>64 bytes  分区信息<br>2 bytes   接触的标志位</p>
+<p>我们可以在多个分区安装boot loader，每个boot loader对应不同的操作系统，在读取MBR的时候选择我们想要启动的boot loader。这就是多操作系统的原理。根据boot loader的选项，Linux此时可以进入单用户模式(single user mode)。在此模式下，初始脚本还没有开始执行，我们可以检测并修复计算机可能存在的错误。</p>
+<p>如果我们加载的是Linux kernel，Linux kernel开始工作。kernel会首先预留自己运行所需的内存空间，然后通过驱动程序(driver)检测计算机硬件。这样，操作系统就可以知道自己有哪些硬件可用。随后，kernel会启动一个init进程。它是Linux系统中的1号进程(Linux系统没有0号进程)。到此，kernel就完成了在计算机启动阶段的工作，交接给init来管理。</p>
+<p>随后，init会运行一系列的初始脚本(startup scripts)，这些脚本是Linux中常见的shell scripts。这些脚本执行如下功能：<br>设置计算机名称，时区，检测文件系统，挂载硬盘，清空临时文件，设置网络……<br>当这些初始脚本，操作系统已经完全准备好了，只是，还没有人可以登录！！！init会给出登录(login)对话框，或者是图形化的登录界面。</p>
+<h3 id="关闭重启系统"><a href="#关闭重启系统" class="headerlink" title="关闭重启系统"></a>关闭重启系统</h3><p>常用的可以关闭系统的命令：<br>shutdown -h now<br>halt<br>poweroff<br>init 0</p>
+<p>常用的可以重启系统的命令：<br>shutdown -r now<br>reboot<br>init 6</p>
+<p>Linux一共有七个启动级别，切换级别 init 0-7 。<br>cat /etc/inittab<br>0 - halt                    关机<br>1 - Single user mode        单用户，登录后为root权限，无需输入密码。启动系统，在读秒时按任意键。按键：E-&gt; 2 -&gt; E -&gt; 空格 -&gt; 1<br>2 - Multiuser without NFS   多用户，没有网络跟3一样<br>3 - Full multiuse mode      命令行模式<br>4 - unused                  没有使用级别，用于开发<br>5 - x11                     图形界面<br>6 - reboot                  重启</p>
+<p>id:5:initdefault            默认5</p>
+<h3 id="系统监控"><a href="#系统监控" class="headerlink" title="系统监控"></a>系统监控</h3><p>系统监视和进程控制工具 top and free</p>
+<p>top命令的功能：top命令是Linux下常用的性能分析工具,能够实时显示系统中各个进程的资源占用状况,类似于Windows的任务管理器。<br>列出系统状态时，系统默认每5秒刷新一下屏幕上的显示结果。</p>
+<p>第一行信息：<br>top - 11:29:29 up 1 min,  0 users,  load average: 0.52, 0.58, 0.59</p>
+<table>
+<thead>
+<tr>
+<th align="center">top</th>
+<th align="left">11:29:29</th>
+<th align="left">up 1 min</th>
+<th align="left">0 users</th>
+<th align="left">load average: 0.52, 0.58, 0.59</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="left">当前时间</td>
+<td align="left">系统运行时间，格式为时:分</td>
+<td align="left">当前登录用户数</td>
+<td align="left">系统负载。 三个数值分别为  1分钟、5分钟、15分钟前到现在的平均值。</td>
+</tr>
+</tbody></table>
+<p>第二行进程信息：</p>
+<p>Tasks:   3 total,   1 running,   2 sleeping,   0 stopped,   0 zombie</p>
+<table>
+<thead>
+<tr>
+<th align="center">Tasks:   3 total</th>
+<th align="center">1 running</th>
+<th align="center">2 sleeping</th>
+<th align="center">0 stopped</th>
+<th align="center">0 zombie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">进程总数</td>
+<td align="center">正在运行的进程数</td>
+<td align="center">睡眠的进程数</td>
+<td align="center">停止的进程数</td>
+<td align="center">僵尸进程数</td>
+</tr>
+</tbody></table>
+<p>进程：动态的代码文件<br>僵尸进程：主进程已经关闭，子进程还在运行，并且不作任何工作。</p>
+<p>第三行CPU信息：<br>%Cpu(s):  1.2 us,  0.7 sy,  0.0 ni, 98.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</p>
+<table>
+<thead>
+<tr>
+<th align="center">%Cpu(s):  1.2 us</th>
+<th align="center">0.7 sy</th>
+<th align="center">0.0 ni</th>
+<th align="center">98.1 id</th>
+<th align="center">0.0 wa</th>
+<th align="center">0.0 hi</th>
+<th align="center">0.0 si</th>
+<th align="center">0.0 st</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">用户空间占用CPU百分比</td>
+<td align="center">内核空间占用CPU百分比</td>
+<td align="center">用户进程空间内改变过优先级的进程占用CPU百分比</td>
+<td align="center">空闲CPU百分比</td>
+<td align="center">等待输入输出的CPU时间百分比</td>
+<td align="center">硬件中断占用CPU时间的百分比</td>
+<td align="center">软件中断占用CPU时间的百分比</td>
+<td align="center">Steal Time</td>
+</tr>
+</tbody></table>
+<p>第四行内存信息：<br>KiB Mem :  7812596 total,  4376356 free,  3199764 used,   236476 buff/cache</p>
+<p>| KiB Mem | 7812596 total | 4376356 free | 3199764 used | 236476 buff/cache |<br>|:—–:||:—–:||:—–:||:—–:||:—–:|<br>| 内存 | 物理内存总量 | 已使用的物理内存 | 空闲物理内存 | 内核缓存内存量 |</p>
+<p>第五行交换分区信息：<br>KiB Swap:  6553468 total,  6482220 free,    71248 used.  4469656 avail Mem</p>
+<p>| KiB Swap | 6553468 total | 6482220 free | 71248 used | 4469656 avail Mem |<br>|:—–:||:—–:||:—–:||:—–:||:—–:|<br>| 交换分区 | 交换区总量 | 已使用交互区总量 | 空闲交换区总量 | 缓冲的交换区总量 |</p>
+<p>缓冲区：buffer当数据从硬盘读取到内存，先写入到缓冲区，占到一定的程度，内存就会调用，缓解硬盘与内存的时间差问题。</p>
+<p>高速缓存：cache缓解CPU与内存之间的速度差，存放CPU经常调用的数据。</p>
+<p>第六行信息：</p>
+<p>PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND</p>
+<table>
+<thead>
+<tr>
+<th align="center">PID</th>
+<th align="center">USER</th>
+<th align="center">PR</th>
+<th align="center">NI</th>
+<th align="center">VIRT</th>
+<th align="center">RES</th>
+<th align="center">SHR</th>
+<th align="center">S</th>
+<th align="center">%CPU</th>
+<th align="center">%MEM</th>
+<th align="center">TIME+</th>
+<th align="center">TIME+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">进程ID</td>
+<td align="center">进程所有者</td>
+<td align="center">优先级</td>
+<td align="center">nice值，负值表示高优先级</td>
+<td align="center">进程使用的虚拟内存总量</td>
+<td align="center">进程使用的、未被换出的物理内存大小</td>
+<td align="center">共享内存大小</td>
+<td align="center">进程状态</td>
+<td align="center">上次更新到现在的CPU时间占用百分比</td>
+<td align="center">进程使用的物理内存百分比</td>
+<td align="center">进程使用CPU总时间</td>
+<td align="center">命令名、命令行</td>
+</tr>
+</tbody></table>
+<p>free -m<br>free -h<br>查看内存空间</p>
+<p>total  used  free  shared  buff/cache  available</p>
+<table>
+<thead>
+<tr>
+<th align="center">total</th>
+<th align="center">used</th>
+<th align="center">free</th>
+<th align="center">shared</th>
+<th align="center">buff/cache</th>
+<th align="center">available</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">总内存</td>
+<td align="center">分配出去的缓冲区内存</td>
+<td align="center">剩余内存</td>
+<td align="center">共享内存</td>
+<td align="center">缓冲区内存</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>====================================</p>
+<h3 id="GRUP加密"><a href="#GRUP加密" class="headerlink" title="GRUP加密"></a>GRUP加密</h3><p>防止进入单用户更改密码。</p>
+<p>加密：grub-md5-crypt<br>编辑grub配置文件，在title上边添加：password –md5 刚才生成的密文,或者password=明文</p>
+<h3 id="BIOS加密"><a href="#BIOS加密" class="headerlink" title="BIOS加密"></a>BIOS加密</h3><p>进入BIOS就可以加密啦…..扣掉主板上的电池就可以清除BIOS密码啦~</p>
+<h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>ps:process search<br>ps aux<br>ps aux | head -1   查看第一行<br>查看可以登录系统的用户：<br>grep ‘/bin/bash’ /etc/passwd</p>
+<p>查看带有init的进程信息：<br>ps aux | grep ‘init’<br>ps aux | grep ‘init’ | grep -v ‘grep’</p>
+<p>kill<br>kill -9 pid 强制杀死<br>firefox &amp; 后台运行<br>jobs 查看着在后台运行的程序<br>fg %1 调到前台运行<br>kill -9 %1<br>pstree 查看进程树</p>
+<h3 id="硬盘分区"><a href="#硬盘分区" class="headerlink" title="硬盘分区"></a>硬盘分区</h3><p>硬盘在/dev/目录下<br>块存储：相当于一块大的硬盘<br>文件存储：相当于一个文件夹</p>
+<p>fdisk -l /dev/sdb 查看硬盘信息<br>fdisk /dev/sdb  分区 最多4个主分区<br>m 查看帮助<br>n 新建分区<br>p 主分区<br>d 删除分区<br>e 新建扩展分区<br>w 保存<br>partprobe 更新</p>
+<p>格式化 扩展分区不能格式化<br>mkfs ext4 /dev/sdb1<br>mount /dev/sdb1 /sdb/   挂载分区</p>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>统计目录大小：<br>du -sh /etc/</p>
+<p>inode编号：<br>ls -i /etc/passwd</p>
+<p>df -i ：查看硬盘inode信息</p>
+<p>测试硬盘速度：<br>dd if=/dev/sda1 of=/opt/test bs=10G count=1</p>
+<p>新建多个文件:<br>touch /mnt/e/test/{1..10000}.txt</p>
+<p>一、inode是什么？</p>
+<p>理解inode，要从文件储存说起。<br>文件储存在硬盘上，硬盘的最小存储单位叫做”扇区”（Sector）。每个扇区储存512字节（相当于0.5KB）。</p>
+<p>操作系统读取硬盘的时候，不会一个个扇区地读取，这样效率太低，而是一次性连续读取多个扇区，即一次性读取一个”块”（block）。这种由多个扇区组成的”块”，是文件存取的最小单位。”块”的大小，最常见的是4KB，即连续八个 sector组成一个 block。</p>
+<p>文件数据都储存在”块”中，那么很显然，我们还必须找到一个地方储存文件的元信息，比如文件的创建者、文件的创建日期、文件的大小等等。这种储存文件元信息的区域就叫做inode，中文译名为”索引节点”。</p>
+<p>二、inode的内容<br>inode包含文件的元信息，具体来说有以下内容：<br>　　* 文件的字节数<br>　　* 文件拥有者的User ID<br>　　* 文件的Group ID<br>　　* 文件的读、写、执行权限<br>　　* 文件的时间戳，共有三个：ctime指inode上一次变动的时间，mtime指文件内容上一次变动的时间，atime指文件上一次打开的时间。<br>　　* 链接数，即有多少文件名指向这个inode<br>　　* 文件数据block的位置</p>
+<p>可以用stat命令，查看某个文件的inode信息：<br>stat example.txt</p>
+<p>总之，除了文件名以外的所有文件信息，都存在inode之中。至于为什么没有文件名，下文会有详细解释。</p>
+<p>三、inode的大小<br>inode也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个区域。一个是数据区，存放文件数据；另一个是inode区（inode table），存放inode所包含的信息。<br>每个inode节点的大小，一般是128字节或256字节。inode节点的总数，在格式化时就给定，一般是每1KB或每2KB就设置一个inode。假定在一块1GB的硬盘中，每个inode节点的大小为128字节，每1KB就设置一个inode，那么inode table的大小就会达到128MB，占整块硬盘的12.8%。</p>
+<p>查看每个硬盘分区的inode总数和已经使用的数量，可以使用df命令。<br>df -i</p>
+<p>查看每个inode节点的大小，可以用如下命令：<br>sudo dumpe2fs -h /dev/hda | grep “Inode size”</p>
+<p>由于每个文件都必须有一个inode，因此有可能发生inode已经用光，但是硬盘还未存满的情况。这时，就无法在硬盘上创建新文件。</p>
+<p>四、inode号码<br>每个inode都有一个号码，操作系统用inode号码来识别不同的文件。</p>
+<p>这里值得重复一遍，Unix/Linux系统内部不使用文件名，而使用inode号码来识别文件。对于系统来说，文件名只是inode号码便于识别的别称或者绰号。表面上，用户通过文件名，打开文件。实际上，系统内部这个过程分成三步：首先，系统找到这个文件名对应的inode号码；其次，通过inode号码，获取inode信息；最后，根据inode信息，找到文件数据所在的block，读出数据。</p>
+<p>使用ls -i命令，可以看到文件名对应的inode号码：</p>
+<p>ls -i example.txt</p>
+<p>五、目录文件<br>Unix/Linux系统中，目录（directory）也是一种文件。打开目录，实际上就是打开目录文件。</p>
+<p>目录文件的结构非常简单，就是一系列目录项（dirent）的列表。每个目录项，由两部分组成：所包含文件的文件名，以及该文件名对应的inode号码。</p>
+<p>ls命令只列出目录文件中的所有文件名：<br>ls /etc</p>
+<p>ls -i命令列出整个目录文件，即文件名和inode号码：<br>ls -i /etc</p>
+<p>如果要查看文件的详细信息，就必须根据inode号码，访问inode节点，读取信息。ls -l命令列出文件的详细信息。<br>ls -l /etc</p>
+<p>六、硬链接<br>一般情况下，文件名和inode号码是”一一对应”关系，每个inode号码对应一个文件名。但是，Unix/Linux系统允许，多个文件名指向同一个inode号码。这意味着，可以用不同的文件名访问同样的内容；对文件内容进行修改，会影响到所有文件名；但是，删除一个文件名，不影响另一个文件名的访问。这种情况就被称为”硬链接”（hard link）。</p>
+<p>ln命令可以创建硬链接：</p>
+<p>ln 源文件 目标文件</p>
+<p>运行上面这条命令以后，源文件与目标文件的inode号码相同，都指向同一个inode。inode信息中有一项叫做”链接数”，记录指向该inode的文件名总数，这时就会增加1。反过来，删除一个文件名，就会使得inode节点中的”链接数”减1。当这个值减到0，表明没有文件名指向这个inode，系统就会回收这个inode号码，以及其所对应block区域。</p>
+<p>这里顺便说一下目录文件的”链接数”。创建目录时，默认会生成两个目录项：”.”和”..”。前者的inode号码就是当前目录的inode号码，等同于当前目录的”硬链接”；后者的inode号码就是当前目录的父目录的inode号码，等同于父目录的”硬链接”。所以，任何一个目录的”硬链接”总数，总是等于2加上它的子目录总数（含隐藏目录）,这里的2是父目录对其的“硬链接”和当前目录下的”.硬链接“。</p>
+<p>七、软链接<br>除了硬链接以外，还有一种特殊情况。文件A和文件B的inode号码虽然不一样，但是文件A的内容是文件B的路径。读取文件A时，系统会自动将访问者导向文件B。因此，无论打开哪一个文件，最终读取的都是文件B。这时，文件A就称为文件B的”软链接”（soft link）或者”符号链接（symbolic link）。</p>
+<p>这意味着，文件A依赖于文件B而存在，如果删除了文件B，打开文件A就会报错：”No such file or directory”。这是软链接与硬链接最大的不同：文件A指向文件B的文件名，而不是文件B的inode号码，文件B的inode”链接数”不会因此发生变化。</p>
+<p>ln -s命令可以创建软链接。<br>ln -s 源文文件或目录 目标文件或目录</p>
+<p>八、inode的特殊作用<br>由于inode号码与文件名分离，这种机制导致了一些Unix/Linux系统特有的现象。<br>　　1. 有时，文件名包含特殊字符，无法正常删除。这时，直接删除inode节点，就能起到删除文件的作用。<br>　　2. 移动文件或重命名文件，只是改变文件名，不影响inode号码。<br>　　3. 打开一个文件以后，系统就以inode号码来识别这个文件，不再考虑文件名。因此，通常来说，系统无法从inode号码得知文件名。<br>      第3点使得软件更新变得简单，可以在不关闭软件的情况下进行更新，不需要重启。因为系统通过inode号码，识别运行中的文件，不通过文件名。更新的时候，新版文件以同样的文件名，生成一个新的inode，不会影响到运行中的文件。等到下一次运行这个软件的时候，文件名就自动指向新版文件，旧版文件的inode则被回收。</p>
+<p>九 实际问题</p>
+<p>在一台配置较低的Linux服务器（内存、硬盘比较小）的/data分区内创建文件时，系统提示磁盘空间不足，用df -h命令查看了一下磁盘使用情况，发现/data分区只使用了66%，还有12G的剩余空间，按理说不会出现这种问题。 后来用df -i查看了一下/data分区的索引节点(inode)，发现已经用满(IUsed=100%)，导致系统无法创建新目录和文件。 </p>
+<p>查找原因：</p>
+<p>　　/data/cache目录中存在数量非常多的小字节缓存文件，占用的Block不多，但是占用了大量的inode。 </p>
+<p>解决方案：<br>　　1、删除/data/cache目录中的部分文件，释放出/data分区的一部分inode。<br>　　2、用软连接将空闲分区/opt中的newcache目录连接到/data/cache，使用/opt分区的inode来缓解/data分区inode不足的问题：<br>　　ln -s /opt/newcache /data/cache </p>
+<h3 id="软连接硬链接"><a href="#软连接硬链接" class="headerlink" title="软连接硬链接"></a>软连接硬链接</h3><p>软连接：可以跨分区<br>特点：</p>
+<ul>
+<li>快捷方式</li>
+<li>删除链接文件，源文件无影响</li>
+<li>删除源文件，链接文件失效</li>
+<li>修改原文件、链接文件，内容都变</li>
+<li>软连接是指向（定向）文件名，inode 号不一样</li>
+</ul>
+<p>ln -s 原路径 目标路径</p>
+<p>硬链接：不可以跨分区<br>特点：</p>
+<ul>
+<li>删除链接文件，源文件无影响</li>
+<li>删除源文件，链接文件无影响</li>
+<li>修改原文件、链接文件，内容都变</li>
+<li>硬链接是执行inode号，inode 号一样</li>
+</ul>
+<p>ln 原路径 目标路径<br>ln /root/a.txt /root/b.txt</p>
+
+      
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+
+
+    /*引用块样式*/
+    
+
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</html>

